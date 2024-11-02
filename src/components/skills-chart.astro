@@ -1,0 +1,161 @@
+<section class="mt-16">
+  <div class="chart-wrapper bg-neutral-100 dark:bg-neutral-900">
+    <div class="chart-header">
+      <h2 class="chart-title">Programming Skills Evolution</h2>
+      <p class="chart-subtitle">2017 - 2024 Progress</p>
+    </div>
+    <div class="chart-container">
+      <canvas id="skillsChart"></canvas>
+    </div>
+    <div class="legend-container" id="customLegend"></div>
+  </div>
+</section>
+<script>
+  import Chart from 'chart.js/auto';
+
+  const labels = [
+    "Oct 2017",
+    "Sep 2018",
+    "Aug 2019",
+    "Jul 2020",
+    "Jun 2021",
+    "May 2022",
+    "Apr 2023",
+    "Mar 2024",
+  ];
+
+  // Reducido a los lenguajes más relevantes para un diseño más limpio
+  const datasets = [
+    {
+      label: "JavaScript",
+      color: "#eab308",
+      data: [25, 35, 45, 55, 65, 70, 75, 80],
+    },
+    {
+      label: "Python",
+      color: "#3b82f6",
+      data: [20, 30, 40, 50, 60, 65, 70, 75],
+    },
+    {
+      label: "TypeScript",
+      color: "#06b6d4",
+      data: [0, 10, 20, 30, 40, 45, 50, 60],
+    },
+    { label: "React", color: "#14b8a6", data: [5, 15, 25, 35, 45, 50, 55, 65] },
+    {
+      label: "Node.js",
+      color: "#22c55e",
+      data: [10, 20, 30, 40, 45, 50, 55, 60],
+    },
+    {
+      label: "HTML/CSS",
+      color: "#f43f5e",
+      data: [30, 40, 50, 60, 65, 70, 75, 80],
+    },
+    { label: "SQL", color: "#a855f7", data: [15, 25, 35, 45, 50, 55, 60, 65] },
+    { label: "Git", color: "#ec4899", data: [20, 30, 40, 50, 55, 60, 65, 70] },
+  ];
+
+  const ctx = document.getElementById("skillsChart").getContext("2d");
+  const skillsChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: labels,
+      datasets: datasets.map((dataset) => ({
+        label: dataset.label,
+        data: dataset.data,
+        backgroundColor: `${dataset.color}33`,
+        borderColor: dataset.color,
+        borderWidth: 2,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 0,
+        pointHoverRadius: 4,
+        pointHoverBackgroundColor: dataset.color,
+        pointHoverBorderColor: "#fff",
+        pointHoverBorderWidth: 2,
+      })),
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+        mode: "nearest",
+        axis: "x",
+        intersect: false,
+      },
+      scales: {
+        x: {
+          grid: {
+            display: false,
+          },
+          ticks: {
+            color: "#94a3b8",
+            font: {
+              size: 10,
+            },
+          },
+        },
+        y: {
+          grid: {
+            color: "#334155",
+          },
+          ticks: {
+            color: "#94a3b8",
+            font: {
+              size: 10,
+            },
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+        tooltip: {
+          backgroundColor: "#1e293b",
+          titleColor: "#e2e8f0",
+          bodyColor: "#e2e8f0",
+          borderColor: "#334155",
+          borderWidth: 1,
+          padding: 12,
+          displayColors: true,
+          callbacks: {
+            label: function (context) {
+              return `${context.dataset.label}: ${context.parsed.y}%`;
+            },
+          },
+        },
+      },
+    },
+  });
+
+  // Leyenda personalizada
+  const legendContainer = document.getElementById("customLegend");
+  datasets.forEach((dataset) => {
+    const item = document.createElement("div");
+    item.className = "legend-item";
+
+    const color = document.createElement("div");
+    color.className = "legend-color";
+    color.style.backgroundColor = dataset.color;
+
+    const label = document.createElement("span");
+    label.textContent = dataset.label;
+
+    item.appendChild(color);
+    item.appendChild(label);
+
+    // Interactividad de la leyenda
+    item.addEventListener("mouseenter", () => {
+      const datasetIndex = skillsChart.data.datasets.findIndex(
+        (d) => d.label === dataset.label
+      );
+      const meta = skillsChart.getDatasetMeta(datasetIndex);
+      meta.hidden = false;
+      skillsChart.update();
+    });
+
+    legendContainer.appendChild(item);
+  });
+</script>

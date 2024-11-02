@@ -1,0 +1,93 @@
+---
+import Button from "../components/button.astro";
+import Projects from "../components/home/projects.astro";
+import Separator from "../components/home/separator.astro";
+import Writings from "../components/home/writings.astro";
+import Layout from "../layouts/main.astro";
+import GithubChart from "../components/github-chart.astro";
+import SkillsChart from "../components/skills-chart.astro";
+import StatsChart from "../components/stats-chart.astro";
+import { links } from "../collections/links-web";
+---
+
+<Layout title="leynierdev">
+  <div
+    class="relative z-20 w-full max-w-4xl mx-auto mt-16 px-7 xl:px-0"
+  >
+    <div class="flex flex-col items-center md:flex-row">
+      <div class="relative w-full">
+        <h1
+          class="mb-5 text-4xl font-bold leading-tight md:text-4xl lg:text-5xl dark:text-white"
+        >
+          Hello, I'm <span class="text-sky-400">Leynier</span>
+        </h1>
+        <p class="mb-6 text-base text-neutral-600 dark:text-neutral-400">
+          👨🏻‍💻 I'm a Computer Science graduate. <br
+            class="hidden lg:block"
+          />💡 I know several programming languages.  
+          <br
+            class="hidden lg:block"
+          />
+          💻 I really like both mobile application development and web application development, using frameworks, software and technologies.
+          <br
+          class="hidden lg:block"
+        />
+        ❤️ In my free time, I am always researching and learning about new technologies. I am good at working both individually and as a team, I know the development methodologies of agile software and tools like Git.
+        </p>
+        <p class="mb-2 font-semibold text-neutral-800 dark:text-neutral-200">
+          I can help you out with:
+        </p>
+        <ul
+          class="py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400"
+        >
+          <li>C, C++, C#, Dart, Java, Python, and Javascript Development</li>
+          <li>HTML, CSS, and JSON</li>
+          <li>Android Studio, Flutter, Unity, Flask, FastAPI, Vue.js, Bootstrap</li> 
+          <li>and more...</li>
+        </ul>
+        <Button text="Subscribe on Youtube" link={links.youtube} />
+      </div>
+      <div
+      class="relative justify-end hidden w-full md:flex md:pl-10 md:w-1/2 md:mt-0 xl:translate-y-0"
+    >
+      <div class="relative z-50 w-full"> 
+        <div
+          class="absolute top-2 z-40 w-16 h-16 -translate-x-6 -translate-y-1/2 lg:top-2 lg:translate-y-0 rounded-full"
+        >
+          <span
+            class="relative z-20 flex items-center justify-center w-full h-full text-2xl border-8 border-white rounded-full dark:border-neutral-950 bg-neutral-100 dark:bg-neutral-900"
+          >
+            <span
+              class="flex items-center justify-center w-full h-full bg-white border border-dashed rounded-full dark:bg-neutral-950 border-sky-400"
+              >👋</span
+            >
+          </span>
+        </div>
+     
+        <div class="relative z-30 px-5 py-5">
+          <img style="border-radius:20px; object-fit: cover;" 
+            src="/assets/images/ley.jpg"
+            loading="eager"
+            decoding="auto"
+            class="relative z-30 w-full max-w-md mx-auto"
+          />
+        </div>
+     
+        <div
+          class="absolute bottom-0 right-0 z-20 w-full h-full rounded-2xl bg-gradient-to-r dark:from-neutral-950 dark:via-black dark:to-neutral-950 from-white via-neutral-50 to-white animate-border-dance"
+        >
+        </div>
+      </div>
+    </div> 
+    </div>
+  </div>
+
+  <Separator text="Check out my statistics" />
+  <GithubChart />
+  <SkillsChart />
+  <StatsChart />
+  <Separator text="Check out my projects" />
+  <Projects />
+  <Separator text="Some of my writing" />
+  <Writings />
+</Layout>

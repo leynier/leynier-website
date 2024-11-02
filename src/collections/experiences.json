@@ -1,0 +1,51 @@
+[
+	{
+		"dates": "January 2021 - Present",
+		"role": "Head of Engineering",
+		"company": "EducUp",
+		"description": "I lead a team of developers, both frontend and backend, in which we use agile methodologies and technologies such as ASP.Net Core, Unity, Flutter, FastAPI, Firebase, AWS, among others.",
+		"logo": "/assets/images/experiences/vilin.ico"
+	},
+	{
+		"dates": "August 2021 - Present",
+		"role": "CTO & Co-founder",
+		"company": "MeSirve",
+		"description": "An app for business. And all businesses for an app. Create your 100% free store today and join the progress 🚀.",
+		"logo": "/assets/images/experiences/mesirve.png"
+	},
+	{
+		"dates": "December 2021 - Present",
+		"role": "Professor",
+		"company": "MatCom",
+		"description": "An app for business. And all businesses for an app. Create your 100% free store today and join the progress 🚀.",
+		"logo": "/assets/images/experiences/wulian.ico"
+	},
+	{
+		"dates": "January 2020 - December 2020",
+		"role": "Flutter Developer",
+		"company": "EducUp",
+		"description": "Mainly developing mobile applications using the Flutter framework, but also maintaining mobile applications developed with Unity, as well as implementing systems and tools using Dart, Python and C#.",
+		"logo": "/assets/images/experiences/vilin.ico"
+	},
+	{
+		"dates": "September 2018 - April 2021",
+		"role": "Unity Developer",
+		"company": "Viera Academy",
+		"description": "Member of the applications development team. In charge mainly of the functionalities related to third party services such as Unity IAP, Google Firebase, etc.",
+		"logo": "/assets/images/experiences/wulian.ico"
+	},
+	{
+		"dates": "September 2019 - March 2021",
+		"role": "Assistant Student",
+		"company": "University of Havana",
+		"description": "Assistant Student of Computer Networks in the Faculty of Mathematics and Computing and of Computing and Programming at the Faculty of Biology of the University of Havana.",
+		"logo": "/assets/images/experiences/wulian.ico"
+	},
+	{
+		"dates": "July 1, 2019 - July 18, 2019",
+		"role": "Trained",
+		"company": "Cuban Neuroscience Center",
+		"description": "Member of a team responsible for migrating and implementing new functionalities of an application made in Matlab on the analysis of the gait which from sensors that measure acceleration, direction, etc; calculates different parameters such as the number of steps, the step length, the step speed, etc. The new application was implemented in the Python programming language.",
+		"logo": "/assets/images/experiences/wulian.ico"
+	}
+]

@@ -1,0 +1,26 @@
+[
+	{
+		"name": "Cuba Weather",
+		"description": "Cuba Weather is an open-source, non-profit initiative providing Cuban residents with easy access to national weather information, using only local data navigation. With over 28,000 downloads and growing community support, it has garnered significant media attention and collaboration from specialists and developers.",
+		"image": "/assets/images/projects/weather.png",
+		"url": "https://cubaweather.app/"
+	},
+	{
+		"name": "Covid19 Cuba Data",
+		"description": "Visualize the data related to Covid-19 in Cuba from the official information of the MINSAP that is reported the next day.",
+		"image": "/assets/images/projects/covid.png",
+		"url": "https://github.com/covid19cuba"
+	},
+	{
+		"name": "HTML.ZONE",
+		"description": "Web Toolbox.",
+		"image": "/assets/images/projects/html.zone.png",
+		"url": "https://html.zone"
+	},
+	{
+		"name": "Sink",
+		"description": "A Simple / Speedy / Secure Link Shortener with Analytics.",
+		"image": "/assets/images/projects/sink.cool.png",
+		"url": "https://sink.cool"
+	}
+]
