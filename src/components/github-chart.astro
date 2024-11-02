@@ -36,8 +36,8 @@
   </div>
 </section>
 <script>
-  const canvas = document.getElementById("contributionGraph");
-  const ctx = canvas.getContext("2d");
+  const canvas = document.getElementById("contributionGraph") as HTMLCanvasElement | null;
+  const ctx = canvas?.getContext("2d");
   const tooltip = document.getElementById("tooltip");
 
   const cellSize = 10;
@@ -50,7 +50,7 @@
 
   const colorLevels = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"];
 
-  async function fetchGitHubData(username) {
+  async function fetchGitHubData(username: string) {
     const response = await fetch(
       `https://github-contributions-api.jogruber.de/v4/${username}`
     );
@@ -69,7 +69,7 @@
 
   function drawContributionGraph(contributionData) {
     ctx.fillStyle = "transparent";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, canvas?.width, canvas?.height);
 
     const maxCount = Math.max(...contributionData.map((d) => d.count));
 
