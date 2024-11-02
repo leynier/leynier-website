@@ -4,6 +4,10 @@
 
 /* Add Your Custom CSS Here */
 
+body{
+overflow-x: hidden;
+}
+
 .prose img {
   border-radius: 30px;
 }
