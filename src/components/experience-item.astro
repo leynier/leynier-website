@@ -1,0 +1,41 @@
+---
+const formatDate = (date: string | null): string => {
+  if (date === null) {
+    return "Present";
+  }
+  const [year, month, day] = date.split("-");
+  const dateObj = new Date(
+    parseInt(year),
+    month ? parseInt(month) - 1 : 0,
+    day ? parseInt(day) : 1
+  );
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: month ? "long" : undefined,
+    day: day ? "numeric" : undefined,
+  };
+  return dateObj.toLocaleDateString("en-US", options);
+};
+
+const { logo, startDate, endDate, role, institution, description } =
+  Astro.props;
+---
+
+<div class="relative flex flex-col justify-start pl-12">
+  <div
+    class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700"
+  >
+    <img src={logo} alt={institution} class="w-8 h-8" />
+  </div>
+
+  <p
+    class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest"
+  >
+    {formatDate(startDate)} - {formatDate(endDate)}
+  </p>
+  <h3 class="my-1 text-lg font-bold dark:text-neutral-100">{role}</h3>
+  <p class="mb-1 text-sm font-medium dark:text-neutral-300">{institution}</p>
+  <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">
+    {description}
+  </p>
+</div>

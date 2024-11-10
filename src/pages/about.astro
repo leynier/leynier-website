@@ -1,6 +1,6 @@
 ---
 import experiences from "../collections/experiences.json";
-import AboutExperience from "../components/about-experience.astro";
+import ExperienceItem from "../components/experience-item.astro";
 import PageHeading from "../components/page-heading.astro";
 import Layout from "../layouts/main.astro";
 ---
@@ -32,28 +32,19 @@ import Layout from "../layouts/main.astro";
     </h2>
     <div class="px-5 py-10">
       {
-        experiences.map((experience, loop) => {
+        experiences.map((experience) => {
           return (
             <>
-              {loop != experiences.length ? (
-                <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
-                  <AboutExperience
-                    dates={experience.dates}
-                    role={experience.role}
-                    company={experience.company}
-                    description={experience.description}
-                    logo={experience.logo}
-                  />
-                </div>
-              ) : (
-                <AboutExperience
-                  dates={experience.dates}
+              <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
+                <ExperienceItem
+                  startDate={experience.startDate}
+                  endDate={experience.endDate}
                   role={experience.role}
-                  company={experience.company}
-                  description={experience.description}
+                  institution={experience.institution.english}
+                  description={experience.description.english}
                   logo={experience.logo}
                 />
-              )}
+              </div>
             </>
           );
         })
