@@ -4,15 +4,23 @@
 		"url": "/"
 	},
 	{
-		"name": "Posts",
-		"url": "/posts"
+		"name": "Experiences",
+		"url": "/experiences"
 	},
 	{
 		"name": "Projects",
 		"url": "/projects"
 	},
 	{
-		"name": "About",
+		"name": "Posts",
+		"url": "/posts"
+	},
+	{
+		"name": "Stats",
+		"url": "/stats"
+	},
+	{
+		"name": "About Me",
 		"url": "/about"
 	}
 ]

@@ -1,51 +1,121 @@
 [
-	{
-		"dates": "January 2021 - Present",
-		"role": "Head of Engineering",
-		"company": "EducUp",
-		"description": "I lead a team of developers, both frontend and backend, in which we use agile methodologies and technologies such as ASP.Net Core, Unity, Flutter, FastAPI, Firebase, AWS, among others.",
-		"logo": "/assets/images/experiences/vilin.ico"
-	},
-	{
-		"dates": "August 2021 - Present",
-		"role": "CTO & Co-founder",
-		"company": "MeSirve",
-		"description": "An app for business. And all businesses for an app. Create your 100% free store today and join the progress 🚀.",
-		"logo": "/assets/images/experiences/mesirve.png"
-	},
-	{
-		"dates": "December 2021 - Present",
-		"role": "Professor",
-		"company": "MatCom",
-		"description": "An app for business. And all businesses for an app. Create your 100% free store today and join the progress 🚀.",
-		"logo": "/assets/images/experiences/wulian.ico"
-	},
-	{
-		"dates": "January 2020 - December 2020",
-		"role": "Flutter Developer",
-		"company": "EducUp",
-		"description": "Mainly developing mobile applications using the Flutter framework, but also maintaining mobile applications developed with Unity, as well as implementing systems and tools using Dart, Python and C#.",
-		"logo": "/assets/images/experiences/vilin.ico"
-	},
-	{
-		"dates": "September 2018 - April 2021",
-		"role": "Unity Developer",
-		"company": "Viera Academy",
-		"description": "Member of the applications development team. In charge mainly of the functionalities related to third party services such as Unity IAP, Google Firebase, etc.",
-		"logo": "/assets/images/experiences/wulian.ico"
-	},
-	{
-		"dates": "September 2019 - March 2021",
-		"role": "Assistant Student",
-		"company": "University of Havana",
-		"description": "Assistant Student of Computer Networks in the Faculty of Mathematics and Computing and of Computing and Programming at the Faculty of Biology of the University of Havana.",
-		"logo": "/assets/images/experiences/wulian.ico"
-	},
-	{
-		"dates": "July 1, 2019 - July 18, 2019",
-		"role": "Trained",
-		"company": "Cuban Neuroscience Center",
-		"description": "Member of a team responsible for migrating and implementing new functionalities of an application made in Matlab on the analysis of the gait which from sensors that measure acceleration, direction, etc; calculates different parameters such as the number of steps, the step length, the step speed, etc. The new application was implemented in the Python programming language.",
-		"logo": "/assets/images/experiences/wulian.ico"
-	}
+  {
+    "startDate": "2021-01",
+    "endDate": null,
+    "role": "Head of Engineering",
+    "institution": {
+      "english": "EducUp",
+      "spanish": "EducUp"
+    },
+    "description": {
+      "english": "I lead a team of developers, both frontend and backend, in which we use agile methodologies and technologies such as ASP.Net Core, Unity, Flutter, FastAPI, Firebase, AWS, among others.",
+      "spanish": "Lidero un equipo de desarrolladores, tanto frontend como backend, en el que utilizamos metodologías ágiles y tecnologías como ASP.Net Core, Unity, Flutter, FastAPI, Firebase, AWS, entre otras."
+    },
+    "logo": "/assets/images/experiences/vilin.ico",
+    "url": "",
+    "type": "professional",
+    "featured": true
+  },
+  {
+    "startDate": "2021-08",
+    "endDate": null,
+    "role": "CTO & Co-founder",
+    "institution": {
+      "english": "MeSirve",
+      "spanish": "MeSirve"
+    },
+    "description": {
+      "english": "An app for business. And all businesses for an app. Create your 100% free store today and join the progress 🚀.",
+      "spanish": "Una aplicación para negocios. Y todos los negocios para una aplicación. Crea tu tienda 100% gratis hoy y únete al progreso 🚀."
+    },
+    "logo": "/assets/images/experiences/mesirve.png",
+    "url": "",
+    "type": "professional",
+    "featured": false
+  },
+  {
+    "startDate": "2021-12",
+    "endDate": null,
+    "role": "Professor",
+    "institution": {
+      "english": "MatCom",
+      "spanish": "MatCom"
+    },
+    "description": {
+      "english": "An app for business. And all businesses for an app. Create your 100% free store today and join the progress 🚀.",
+      "spanish": "Una aplicación para negocios. Y todos los negocios para una aplicación. Crea tu tienda 100% gratis hoy y únete al progreso 🚀."
+    },
+    "logo": "/assets/images/experiences/wulian.ico",
+    "url": "",
+    "type": "professional",
+    "featured": true
+  },
+  {
+    "startDate": "2020-01",
+    "endDate": "2020-12",
+    "role": "Flutter Developer",
+    "institution": {
+      "english": "EducUp",
+      "spanish": "EducUp"
+    },
+    "description": {
+      "english": "Mainly developing mobile applications using the Flutter framework, but also maintaining mobile applications developed with Unity, as well as implementing systems and tools using Dart, Python and C#.",
+      "spanish": "Principalmente desarrollando aplicaciones móviles utilizando el framework Flutter, pero también manteniendo aplicaciones móviles desarrolladas con Unity, así como implementando sistemas y herramientas utilizando Dart, Python y C#."
+    },
+    "logo": "/assets/images/experiences/vilin.ico",
+    "url": "",
+    "type": "professional",
+    "featured": false
+  },
+  {
+    "startDate": "2018-09",
+    "endDate": "2021-04",
+    "role": "Unity Developer",
+    "institution": {
+      "english": "Viera Academy",
+      "spanish": "Viera Academy"
+    },
+    "description": {
+      "english": "Member of the applications development team. In charge mainly of the functionalities related to third party services such as Unity IAP, Google Firebase, etc.",
+      "spanish": "Miembro del equipo de desarrollo de aplicaciones. Encargado principalmente de las funcionalidades relacionadas con servicios de terceros como Unity IAP, Google Firebase, etc."
+    },
+    "logo": "/assets/images/experiences/wulian.ico",
+    "url": "",
+    "type": "professional",
+    "featured": false
+  },
+  {
+    "startDate": "2019-09",
+    "endDate": "2021-03",
+    "role": "Assistant Student",
+    "institution": {
+      "english": "University of Havana",
+      "spanish": "Universidad de La Habana"
+    },
+    "description": {
+      "english": "Assistant Student of Computer Networks in the Faculty of Mathematics and Computing and of Computing and Programming at the Faculty of Biology of the University of Havana.",
+      "spanish": "Estudiante asistente de Redes Informáticas en la Facultad de Matemática y Computación y de Informática y Programación en la Facultad de Biología de la Universidad de La Habana."
+    },
+    "logo": "/assets/images/experiences/wulian.ico",
+    "url": "",
+    "type": "education",
+    "featured": false
+  },
+  {
+    "startDate": "2019-07-01",
+    "endDate": "2019-07-18",
+    "role": "Trained",
+    "institution": {
+      "english": "Cuban Neuroscience Center",
+      "spanish": "Centro de Neurociencias de Cuba"
+    },
+    "description": {
+      "english": "Member of a team responsible for migrating and implementing new functionalities of an application made in Matlab on the analysis of the gait which from sensors that measure acceleration, direction, etc; calculates different parameters such as the number of steps, the step length, the step speed, etc. The new application was implemented in the Python programming language.",
+      "spanish": "Miembro de un equipo encargado de migrar e implementar nuevas funcionalidades de una aplicación hecha en Matlab para el análisis de la marcha que, a partir de sensores que miden aceleración, dirección, etc., calcula diferentes parámetros como el número de pasos, la longitud del paso, la velocidad del paso, etc. La nueva aplicación se implementó en el lenguaje de programación Python."
+    },
+    "logo": "/assets/images/experiences/wulian.ico",
+    "url": "",
+    "type": "professional",
+    "featured": false
+  }
 ]
