@@ -22,6 +22,13 @@ export const PostSchema = z.object({
     coverImage: z.object({
         url: z.string(),
     }),
+    seo: z.object({
+        title: z.string(),
+        description: z.string(),
+    }),
+    ogMetaData: z.object({
+        image: z.string(),
+    }),
 })
 
 export const AllPostsDataSchema = z.object({

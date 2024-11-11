@@ -43,6 +43,13 @@ export const getAllPosts = async () => {
                 }
                 publishedAt
                 readTimeInMinutes
+                seo {
+                  title
+                  description
+                }
+                ogMetaData {
+                  image
+                }
               }
             }
           }
@@ -80,6 +87,13 @@ export const getPost = async (slug: string) => {
             }
             coverImage {
               url
+            }
+            seo {
+              title
+              description
+            }
+            ogMetaData {
+              image
             }
           }
         }

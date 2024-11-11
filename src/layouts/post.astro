@@ -5,13 +5,13 @@ import Layout from "./main.astro";
 
 const { post } = Astro.props as { post: Post };
 
-const title = `Post · ${post.title}`;
+const title = `Post · ${post.seo?.title ?? post.title}`;
 ---
 
 <Layout
   title={title}
-  description={post.brief}
-  cover={post.coverImage?.url}
+  description={post.seo?.description ?? post.brief}
+  cover={post.ogMetaData?.image ?? post.coverImage?.url}
   tags={post.tags?.map((t) => t.name).filter((t) => t)}
   relativeUrl={`/posts/${post.slug}`}
 >
