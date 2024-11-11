@@ -6,21 +6,5 @@
 	{
 		"name": "Experiences",
 		"url": "/experiences"
-	},
-	{
-		"name": "Projects",
-		"url": "/projects"
-	},
-	{
-		"name": "Posts",
-		"url": "/posts"
-	},
-	{
-		"name": "Stats",
-		"url": "/stats"
-	},
-	{
-		"name": "About Me",
-		"url": "/about"
 	}
 ]

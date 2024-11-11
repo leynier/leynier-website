@@ -13,11 +13,6 @@ import ExperienceItem from "../experience-item.astro";
   <div class="px-5 py-10">
     {
       experiences
-        .toSorted((a, b) => {
-          if (b.endDate < a.endDate) return 1;
-          if (b.endDate > a.endDate) return -1;
-          return 0;
-        })
         .filter(
           (experience) =>
             experience.type == "professional" && experience.featured
@@ -29,10 +24,12 @@ import ExperienceItem from "../experience-item.astro";
                 <ExperienceItem
                   startDate={experience.startDate}
                   endDate={experience.endDate}
-                  role={experience.role}
+                  role={experience.role.english}
                   institution={experience.institution.english}
+                  url={experience.url}
                   description={experience.description.english}
                   logo={experience.logo}
+                  tags={experience.tags.english}
                 />
               </div>
             </>

@@ -2,120 +2,341 @@
   {
     "startDate": "2021-01",
     "endDate": null,
-    "role": "Head of Engineering",
+    "role": {
+      "english": "Head of Engineering",
+      "spanish": "Jefe de Ingeniería"
+    },
     "institution": {
       "english": "EducUp",
       "spanish": "EducUp"
     },
     "description": {
-      "english": "I lead a team of developers, both frontend and backend, in which we use agile methodologies and technologies such as ASP.Net Core, Unity, Flutter, FastAPI, Firebase, AWS, among others.",
-      "spanish": "Lidero un equipo de desarrolladores, tanto frontend como backend, en el que utilizamos metodologías ágiles y tecnologías como ASP.Net Core, Unity, Flutter, FastAPI, Firebase, AWS, entre otras."
+      "english": "I lead a team of developers, both frontend and backend, using agile methodologies and technologies such as ASP.Net Core, Unity, Flutter, FastAPI, Firebase, AWS, among others.",
+      "spanish": "Lidero un equipo de desarrolladores, tanto de frontend como de backend, utilizando metodologías ágiles y tecnologías como ASP.Net Core, Unity, Flutter, FastAPI, Firebase, AWS, entre otras."
+    },
+    "tags": {
+      "english": [
+        "ASP.Net Core",
+        "Unity",
+        "Flutter",
+        "FastAPI",
+        "Firebase",
+        "AWS",
+        "Agile Methodologies"
+      ],
+      "spanish": [
+        "ASP.Net Core",
+        "Unity",
+        "Flutter",
+        "FastAPI",
+        "Firebase",
+        "AWS",
+        "Metodologías Ágiles"
+      ]
     },
     "logo": "/assets/images/experiences/vilin.ico",
-    "url": "",
+    "url": "https://educup.io",
+    "type": "professional",
+    "featured": true
+  },
+  {
+    "startDate": "2021-12",
+    "endDate": "2024-08",
+    "role": {
+      "english": "Professor",
+      "spanish": "Profesor"
+    },
+    "institution": {
+      "english": "University of Havana",
+      "spanish": "Universidad de La Habana"
+    },
+    "description": {
+      "english": "Professor of the Faculty of Mathematics and Computing at the University of Havana, teaching Programming and Programming Languages courses.",
+      "spanish": "Profesor de la Facultad de Matemática y Computación de la Universidad de La Habana, enseñando cursos de Programación y Lenguajes de Programación."
+    },
+    "tags": {
+      "english": [
+        "Python",
+        "C#",
+        "Programming Languages"
+      ],
+      "spanish": [
+        "Python",
+        "C#",
+        "Lenguajes de Programación"
+      ]
+    },
+    "logo": "/assets/images/experiences/uhlogo-white.png",
+    "url": "https://www.uh.cu",
+    "type": "professional",
+    "featured": true
+  },
+  {
+    "startDate": "2024-04-14",
+    "endDate": "2024-07-16",
+    "role": {
+      "english": "Researcher",
+      "spanish": "Investigador"
+    },
+    "institution": {
+      "english": "University of L'Aquila",
+      "spanish": "Universidad de L'Aquila"
+    },
+    "description": {
+      "english": "I participated in the development of the GRETEL framework, which is used for evaluating graph counterfactual explanations. My responsibilities included performing maintenance tasks and adding new features, such as a multi-criteria explainer to balance quality measures and enhance explainability.",
+      "spanish": "Participé en el desarrollo del framework GRETEL, que se utiliza para evaluar explicaciones contrafactuales en grafos. Mis responsabilidades incluyeron realizar tareas de mantenimiento y agregar nuevas características, como un explicador de múltiples criterios para equilibrar las medidas de calidad y mejorar la explicabilidad."
+    },
+    "tags": {
+      "english": [
+        "Python",
+        "AI",
+        "ML",
+        "Graph Counterfactual Explanations"
+      ],
+      "spanish": [
+        "Python",
+        "AI",
+        "ML",
+        "Explicaciones Contrafactuales en Grafos"
+      ]
+    },
+    "logo": "/assets/images/experiences/univaq.png",
+    "url": "https://www.univaq.it",
     "type": "professional",
     "featured": true
   },
   {
     "startDate": "2021-08",
-    "endDate": null,
-    "role": "CTO & Co-founder",
+    "endDate": "2024-08",
+    "role": {
+      "english": "CTO & Co-founder",
+      "spanish": "CTO y Co-fundador"
+    },
     "institution": {
       "english": "MeSirve",
       "spanish": "MeSirve"
     },
     "description": {
-      "english": "An app for business. And all businesses for an app. Create your 100% free store today and join the progress 🚀.",
-      "spanish": "Una aplicación para negocios. Y todos los negocios para una aplicación. Crea tu tienda 100% gratis hoy y únete al progreso 🚀."
+      "english": "An app for business. And all businesses for an app. Create your 100% free store today and join the progress.",
+      "spanish": "Una aplicación para negocios. Y todos los negocios para una aplicación. Crea tu tienda 100% gratuita hoy y únete al progreso."
+    },
+    "tags": {
+      "english": [
+        "Flutter",
+        "FastAPI",
+        "MongoDB",
+        "Dart",
+        "Firebase"
+      ],
+      "spanish": [
+        "Flutter",
+        "FastAPI",
+        "MongoDB",
+        "Dart",
+        "Firebase"
+      ]
     },
     "logo": "/assets/images/experiences/mesirve.png",
-    "url": "",
+    "url": "https://mesirve.app",
     "type": "professional",
     "featured": false
   },
   {
-    "startDate": "2021-12",
-    "endDate": null,
-    "role": "Professor",
-    "institution": {
-      "english": "MatCom",
-      "spanish": "MatCom"
-    },
-    "description": {
-      "english": "An app for business. And all businesses for an app. Create your 100% free store today and join the progress 🚀.",
-      "spanish": "Una aplicación para negocios. Y todos los negocios para una aplicación. Crea tu tienda 100% gratis hoy y únete al progreso 🚀."
-    },
-    "logo": "/assets/images/experiences/wulian.ico",
-    "url": "",
-    "type": "professional",
-    "featured": true
-  },
-  {
     "startDate": "2020-01",
-    "endDate": "2020-12",
-    "role": "Flutter Developer",
+    "endDate": "2021-01",
+    "role": {
+      "english": "Flutter Developer",
+      "spanish": "Desarrollador Flutter"
+    },
     "institution": {
       "english": "EducUp",
       "spanish": "EducUp"
     },
     "description": {
-      "english": "Mainly developing mobile applications using the Flutter framework, but also maintaining mobile applications developed with Unity, as well as implementing systems and tools using Dart, Python and C#.",
-      "spanish": "Principalmente desarrollando aplicaciones móviles utilizando el framework Flutter, pero también manteniendo aplicaciones móviles desarrolladas con Unity, así como implementando sistemas y herramientas utilizando Dart, Python y C#."
+      "english": "Mainly developing mobile applications using the Flutter framework, but also maintaining mobile applications developed with Unity, as well as implementing systems and tools using Dart, Python, and C#.",
+      "spanish": "Desarrollo principalmente de aplicaciones móviles utilizando el framework Flutter, pero también manteniendo aplicaciones móviles desarrolladas con Unity, así como la implementación de sistemas y herramientas utilizando Dart, Python y C#."
+    },
+    "tags": {
+      "english": [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "Unity",
+        "Python",
+        "C#"
+      ],
+      "spanish": [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "Unity",
+        "Python",
+        "C#"
+      ]
     },
     "logo": "/assets/images/experiences/vilin.ico",
-    "url": "",
-    "type": "professional",
-    "featured": false
-  },
-  {
-    "startDate": "2018-09",
-    "endDate": "2021-04",
-    "role": "Unity Developer",
-    "institution": {
-      "english": "Viera Academy",
-      "spanish": "Viera Academy"
-    },
-    "description": {
-      "english": "Member of the applications development team. In charge mainly of the functionalities related to third party services such as Unity IAP, Google Firebase, etc.",
-      "spanish": "Miembro del equipo de desarrollo de aplicaciones. Encargado principalmente de las funcionalidades relacionadas con servicios de terceros como Unity IAP, Google Firebase, etc."
-    },
-    "logo": "/assets/images/experiences/wulian.ico",
-    "url": "",
+    "url": "https://educup.io",
     "type": "professional",
     "featured": false
   },
   {
     "startDate": "2019-09",
     "endDate": "2021-03",
-    "role": "Assistant Student",
+    "role": {
+      "english": "Assistant Student",
+      "spanish": "Estudiante Asistente"
+    },
     "institution": {
       "english": "University of Havana",
       "spanish": "Universidad de La Habana"
     },
     "description": {
-      "english": "Assistant Student of Computer Networks in the Faculty of Mathematics and Computing and of Computing and Programming at the Faculty of Biology of the University of Havana.",
-      "spanish": "Estudiante asistente de Redes Informáticas en la Facultad de Matemática y Computación y de Informática y Programación en la Facultad de Biología de la Universidad de La Habana."
+      "english": "Assistant Student of Computer Networks in the Faculty of Mathematics and Computing, and Computing and Programming at the Faculty of Biology.",
+      "spanish": "Estudiante asistente de Redes de Computadoras en la Facultad de Matemática y Computación, y de Computación y Programación en la Facultad de Biología."
     },
-    "logo": "/assets/images/experiences/wulian.ico",
-    "url": "",
-    "type": "education",
+    "tags": {
+      "english": [
+        "Computer Networks",
+        "Python",
+        "C#",
+        "Matlab"
+      ],
+      "spanish": [
+        "Redes de Computadoras",
+        "Python",
+        "C#",
+        "Matlab"
+      ]
+    },
+    "logo": "/assets/images/experiences/uhlogo-white.png",
+    "url": "https://www.uh.cu",
+    "type": "professional",
     "featured": false
   },
   {
     "startDate": "2019-07-01",
-    "endDate": "2019-07-18",
-    "role": "Trained",
+    "endDate": "2019-07-31",
+    "role": {
+      "english": "Intern",
+      "spanish": "Becario"
+    },
     "institution": {
       "english": "Cuban Neuroscience Center",
       "spanish": "Centro de Neurociencias de Cuba"
     },
     "description": {
-      "english": "Member of a team responsible for migrating and implementing new functionalities of an application made in Matlab on the analysis of the gait which from sensors that measure acceleration, direction, etc; calculates different parameters such as the number of steps, the step length, the step speed, etc. The new application was implemented in the Python programming language.",
-      "spanish": "Miembro de un equipo encargado de migrar e implementar nuevas funcionalidades de una aplicación hecha en Matlab para el análisis de la marcha que, a partir de sensores que miden aceleración, dirección, etc., calcula diferentes parámetros como el número de pasos, la longitud del paso, la velocidad del paso, etc. La nueva aplicación se implementó en el lenguaje de programación Python."
+      "english": "Member of a team responsible for migrating and implementing new functionalities of an application made in Matlab on the analysis of gait, measuring acceleration, direction, step length, and speed. Implemented in Python.",
+      "spanish": "Miembro de un equipo responsable de migrar e implementar nuevas funcionalidades de una aplicación hecha en Matlab para el análisis de la marcha, midiendo aceleración, dirección, longitud de paso y velocidad. Implementado en Python."
     },
-    "logo": "/assets/images/experiences/wulian.ico",
-    "url": "",
+    "tags": {
+      "english": [
+        "Python",
+        "Matlab",
+        "Gait Analysis"
+      ],
+      "spanish": [
+        "Python",
+        "Matlab",
+        "Análisis de la Marcha"
+      ]
+    },
+    "logo": "/assets/images/experiences/cneuro.png",
+    "url": "https://www.biocubafarma.cu/en/empresas/centro-de-neurociencias-de-cuba-cneuro",
     "type": "professional",
+    "featured": false
+  },
+  {
+    "startDate": "2018-09",
+    "endDate": "2021-04",
+    "role": {
+      "english": "Unity Developer",
+      "spanish": "Desarrollador Unity"
+    },
+    "institution": {
+      "english": "Viera Academy",
+      "spanish": "Viera Academy"
+    },
+    "description": {
+      "english": "Member of the applications development team. In charge mainly of functionalities related to third-party services such as Unity IAP, Google Firebase, etc.",
+      "spanish": "Miembro del equipo de desarrollo de aplicaciones. Encargado principalmente de las funcionalidades relacionadas con servicios de terceros como Unity IAP, Google Firebase, etc."
+    },
+    "tags": {
+      "english": [
+        "Unity",
+        "Firebase",
+        "Google Analytics"
+      ],
+      "spanish": [
+        "Unity",
+        "Firebase",
+        "Google Analytics"
+      ]
+    },
+    "logo": "/assets/images/experiences/vieraacademy.png",
+    "url": "https://www.linkedin.com/company/viera-academy",
+    "type": "professional",
+    "featured": false
+  },
+  {
+    "startDate": "2016-09",
+    "endDate": "2021-12",
+    "role": {
+      "english": "Bachelor's Degree, Computer Science",
+      "spanish": "Licenciatura en Ciencia de la Computación"
+    },
+    "institution": {
+      "english": "University of Havana",
+      "spanish": "Universidad de La Habana"
+    },
+    "description": {
+      "english": "Student of Computer Science, Faculty of Mathematics and Computation. Represented the university in events like International Girls' Day on ICT and other contests.",
+      "spanish": "Estudiante de Ciencia de la Computación, Facultad de Matemática y Computación. Representó a la universidad en eventos como el Día Internacional de las Niñas en las TIC y otros concursos."
+    },
+    "tags": {
+      "english": [
+        "Computer Science",
+        "Mathematics",
+        "Programming"
+      ],
+      "spanish": [
+        "Ciencia de la Computación",
+        "Matemáticas",
+        "Programación"
+      ]
+    },
+    "logo": "/assets/images/experiences/uhlogo-white.png",
+    "url": "https://www.uh.cu",
+    "type": "education",
+    "featured": false
+  },
+  {
+    "startDate": "2012-09",
+    "endDate": "2015-07",
+    "role": {
+      "english": "High School, Pre-University",
+      "spanish": "Escuela Secundaria, Preuniversitario"
+    },
+    "institution": {
+      "english": "IPVCE Vladimir Ilich Lenin",
+      "spanish": "IPVCE Vladimir Ilich Lenin"
+    },
+    "description": {
+      "english": "Part of the high performance group in the Computer Science course. Won Gold at the provincial level and Bronze at the national level in Competitive Programming contests. Gained strong problem-solving skills, learned advanced algorithms and data structures, and developed the ability to work under pressure during competitive events.",
+      "spanish": "Parte del grupo de alto rendimiento en el curso de Ciencia de la Computación. Ganó Oro a nivel provincial y Bronce a nivel nacional en concursos de Programación Competitiva. Adquirió fuertes habilidades de resolución de problemas, aprendió algoritmos avanzados y estructuras de datos, y desarrolló la capacidad de trabajar bajo presión durante eventos competitivos."
+    },
+    "tags": {
+      "english": [
+        "Computer Science",
+        "Competitive Programming"
+      ],
+      "spanish": [
+        "Ciencia de la Computación",
+        "Programación Competitiva"
+      ]
+    },
+    "logo": "/assets/images/experiences/ipvce-lenin.png",
+    "url": "https://www.ecured.cu/Instituto_Preuniversitario_Vocacional_de_Ciencias_Exactas_Vladimir_Ilich_Lenin",
+    "type": "education",
     "featured": false
   }
 ]

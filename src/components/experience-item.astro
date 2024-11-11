@@ -17,16 +17,18 @@ const formatDate = (date: string | null): string => {
   return dateObj.toLocaleDateString("en-US", options);
 };
 
-const { logo, startDate, endDate, role, institution, description } =
+const { logo, url, startDate, endDate, role, institution, description, tags } =
   Astro.props;
 ---
 
 <div class="relative flex flex-col justify-start pl-12">
-  <div
+  <a
+    href={url}
+    target="_blank"
     class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 bg-white border rounded-full dark:bg-neutral-950 w-14 h-14 border-neutral-300 dark:border-neutral-700"
   >
     <img src={logo} alt={institution} class="w-8 h-8" />
-  </div>
+  </a>
 
   <p
     class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest"
@@ -34,8 +36,23 @@ const { logo, startDate, endDate, role, institution, description } =
     {formatDate(startDate)} - {formatDate(endDate)}
   </p>
   <h3 class="my-1 text-lg font-bold dark:text-neutral-100">{role}</h3>
-  <p class="mb-1 text-sm font-medium dark:text-neutral-300">{institution}</p>
+  <a
+    href={url}
+    target="_blank"
+    class="mb-1 text-sm font-medium dark:text-neutral-300 underline"
+  >
+    {institution}
+  </a>
   <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">
     {description}
   </p>
+  <div class="flex flex-wrap mt-2">
+    {
+      tags.map((tag) => (
+        <span class="flex items-center justify-center w-auto h-auto px-3 py-1.5 uppercase tracking-widest space-x-1 text-[0.6rem] border rounded-full bg-white dark:bg-neutral-900 text-neutral-800 font-bold dark:text-neutral-400 border-neutral-300 dark:border-neutral-800 shadow-sm m-1">
+          <p class="leading-none gradient-text">{tag}</p>
+        </span>
+      ))
+    }
+  </div>
 </div>

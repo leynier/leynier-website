@@ -39,10 +39,12 @@ import Layout from "../layouts/main.astro";
                 <ExperienceItem
                   startDate={experience.startDate}
                   endDate={experience.endDate}
-                  role={experience.role}
+                  role={experience.role.english}
                   institution={experience.institution.english}
+                  url={experience.url}
                   description={experience.description.english}
                   logo={experience.logo}
+                  tags={experience.tags.english}
                 />
               </div>
             </>
