@@ -6,5 +6,9 @@
 	{
 		"name": "Experiences",
 		"url": "/experiences"
+	},
+	{
+		"name": "Posts",
+		"url": "/posts"
 	}
 ]

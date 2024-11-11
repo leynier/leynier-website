@@ -1,13 +1,17 @@
 ---
 import Experiences from "../components/home/experiences.astro";
+import RecentPosts from "../components/home/recent-posts.astro";
 import Resume from "../components/home/resume.astro";
 import Separator from "../components/home/separator.astro";
 import Layout from "../layouts/main.astro";
 ---
 
-<Layout title="leynierdev">
+<Layout>
   <Resume />
 
   <Separator text="check out my highlighted experiences" />
   <Experiences />
+
+  <Separator text="check out my recent posts" />
+  <RecentPosts />
 </Layout>

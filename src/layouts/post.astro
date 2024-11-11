@@ -1,11 +1,22 @@
 ---
+import type { Post } from "../lib/hashnode/schema";
+import { formatDate } from "../lib/utils/formatDate";
 import Layout from "./main.astro";
-const { frontmatter } = Astro.props;
+
+const { post } = Astro.props as { post: Post };
+
+const title = `Post · ${post.title}`;
 ---
 
-<Layout title={frontmatter.title}>
+<Layout
+  title={title}
+  description={post.brief}
+  cover={post.coverImage?.url}
+  tags={post.tags?.map((t) => t.name).filter((t) => t)}
+  relativeUrl={`/posts/${post.slug}`}
+>
   <main
-    class="relative z-30 max-w-4xl pb-1 mx-auto mt-10 bg-white dark:bg-neutral-950 md:rounded-t-md text-neutral-900"
+    class="relative z-30 max-w-6xl pb-1 mx-auto mt-10 bg-white dark:bg-neutral-950 md:rounded-t-md text-neutral-900"
   >
     <div
       class="relative flex flex-col px-5 pt-6 border-t border-b-0 md:border-r md:border-l md:pt-20 lg:px-0 justify-stretch md:rounded-t-2xl border-neutral-200 dark:border-neutral-800"
@@ -19,15 +30,30 @@ const { frontmatter } = Astro.props;
       >
       </div>
       <h1
-        class="w-full max-w-2xl mx-auto text-3xl font-bold leading-tight tracking-tighter text-left md:mb-12 md:text-4xl dark:text-neutral-100 lg:text-5xl md:leading-none"
+        class="w-full max-w-5xl mx-auto text-3xl font-bold leading-tight tracking-tighter text-left md:mb-12 md:text-4xl dark:text-neutral-100 lg:text-5xl md:leading-none"
       >
-        {frontmatter.title}
+        {post.title}
       </h1>
     </div>
 
     <article
-      class="w-full max-w-2xl mx-auto mb-20 prose-sm prose px-7 lg:px-0 lg:prose-lg dark:prose-invert"
+      class="w-full max-w-5xl mx-auto mb-20 prose-sm prose px-7 lg:px-0 lg:prose-lg dark:prose-invert prose-h1:my-3 prose-h2:my-3 prose-h3:my-3 prose-h4:my-3 prose-h5:my-3 prose-h6:my-3"
     >
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        Posted on {formatDate(post.publishedAt)} · {post.readTimeInMinutes} min read
+      </p>
+      {
+        post.subtitle && (
+          <p class="mt-2 text-lg text-gray-700 dark:text-gray-300">
+            {post.subtitle}
+          </p>
+        )
+      }
+      {
+        post.coverImage?.url && (
+          <img src={post.coverImage.url} alt={post.title} class="mt-4" />
+        )
+      }
       <slot />
     </article>
   </main>
