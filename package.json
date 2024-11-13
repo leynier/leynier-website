@@ -19,7 +19,6 @@
 		"tailwindcss": "^3.4.3",
 		"typescript": "^5.4.5"
 	},
-	"packageManager": "pnpm@9.12.2",
 	"dependencies": {
 		"chart.js": "^4.4.5",
 		"graphql-request": "^7.1.2",
