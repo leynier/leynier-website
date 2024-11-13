@@ -15,7 +15,7 @@ import ExperienceItem from "../experience-item.astro";
       experiences
         .filter(
           (experience) =>
-            experience.type == "professional" && experience.featured
+            experience.type == "professional" && experience.highlighted
         )
         .map((experience) => {
           return (

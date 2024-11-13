@@ -37,7 +37,7 @@
     "logo": "/assets/images/experiences/vilin.ico",
     "url": "https://educup.io",
     "type": "professional",
-    "featured": true
+    "highlighted": true
   },
   {
     "startDate": "2021-12",
@@ -69,7 +69,7 @@
     "logo": "/assets/images/experiences/uhlogo-white.png",
     "url": "https://www.uh.cu",
     "type": "professional",
-    "featured": true
+    "highlighted": true
   },
   {
     "startDate": "2024-04-14",
@@ -103,7 +103,7 @@
     "logo": "/assets/images/experiences/univaq.png",
     "url": "https://www.univaq.it",
     "type": "professional",
-    "featured": true
+    "highlighted": true
   },
   {
     "startDate": "2021-08",
@@ -139,7 +139,7 @@
     "logo": "/assets/images/experiences/mesirve.png",
     "url": "https://mesirve.app",
     "type": "professional",
-    "featured": false
+    "highlighted": false
   },
   {
     "startDate": "2020-01",
@@ -177,7 +177,7 @@
     "logo": "/assets/images/experiences/vilin.ico",
     "url": "https://educup.io",
     "type": "professional",
-    "featured": false
+    "highlighted": false
   },
   {
     "startDate": "2019-09",
@@ -211,7 +211,7 @@
     "logo": "/assets/images/experiences/uhlogo-white.png",
     "url": "https://www.uh.cu",
     "type": "professional",
-    "featured": false
+    "highlighted": false
   },
   {
     "startDate": "2019-07-01",
@@ -243,7 +243,7 @@
     "logo": "/assets/images/experiences/cneuro.png",
     "url": "https://www.biocubafarma.cu/en/empresas/centro-de-neurociencias-de-cuba-cneuro",
     "type": "professional",
-    "featured": false
+    "highlighted": false
   },
   {
     "startDate": "2018-09",
@@ -275,7 +275,7 @@
     "logo": "/assets/images/experiences/vieraacademy.png",
     "url": "https://www.linkedin.com/company/viera-academy",
     "type": "professional",
-    "featured": false
+    "highlighted": false
   },
   {
     "startDate": "2016-09",
@@ -307,7 +307,7 @@
     "logo": "/assets/images/experiences/uhlogo-white.png",
     "url": "https://www.uh.cu",
     "type": "education",
-    "featured": false
+    "highlighted": false
   },
   {
     "startDate": "2012-09",
@@ -337,6 +337,6 @@
     "logo": "/assets/images/experiences/ipvce-lenin.png",
     "url": "https://www.ecured.cu/Instituto_Preuniversitario_Vocacional_de_Ciencias_Exactas_Vladimir_Ilich_Lenin",
     "type": "education",
-    "featured": false
+    "highlighted": false
   }
 ]
