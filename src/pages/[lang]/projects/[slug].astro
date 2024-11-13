@@ -1,0 +1,22 @@
+---
+import projects from "../../../data/projects.json";
+import Layout from "../../../layouts/project.astro";
+import addLangPaths from "../../../lib/utils/add-lang-paths";
+
+export async function getStaticPaths() {
+  return addLangPaths(
+    projects.map((project) => {
+      return {
+        params: { slug: project.slug },
+      };
+    })
+  );
+}
+
+const { slug } = Astro.params;
+const project = projects.find((project) => project.slug === slug);
+---
+
+<Layout project={project}>
+  <Fragment set:html={project.description.english} />
+</Layout>

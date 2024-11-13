@@ -1,11 +1,18 @@
 ---
 import type { Post } from "../lib/hashnode/schema";
-import { formatDate } from "../lib/utils/formatDate";
+import { formatDate } from "../lib/utils/format-date";
+import { t } from "../lib/utils/il8n";
 import Layout from "./main.astro";
 
 const { post } = Astro.props as { post: Post };
 
-const title = `Post · ${post.seo?.title ?? post.title}`;
+const title = `${t("Post", "Publicación", Astro.currentLocale)} · ${post.seo?.title ?? post.title}`;
+
+const posted = t(
+  `Posted on ${formatDate(post.publishedAt, Astro.currentLocale)} · ${post.readTimeInMinutes} min read`,
+  `Publicado el ${formatDate(post.publishedAt, Astro.currentLocale)} · ${post.readTimeInMinutes} min de lectura`,
+  Astro.currentLocale
+);
 ---
 
 <Layout
@@ -40,7 +47,7 @@ const title = `Post · ${post.seo?.title ?? post.title}`;
       class="w-full max-w-5xl mx-auto mb-20 prose-sm prose px-7 lg:px-0 lg:prose-lg dark:prose-invert prose-h1:my-3 prose-h2:my-3 prose-h3:my-3 prose-h4:my-3 prose-h5:my-3 prose-h6:my-3"
     >
       <p class="text-sm text-gray-500 dark:text-gray-400">
-        Posted on {formatDate(post.publishedAt)} · {post.readTimeInMinutes} min read
+        {posted}
       </p>
       {
         post.subtitle && (

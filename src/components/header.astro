@@ -1,6 +1,9 @@
 ---
 import menus from "../data/menu.json";
 import Logo from "../components/logo.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { t } from "../lib/utils/il8n";
+import LanguageSelector from "./language-selector.astro";
 ---
 
 <!-- This is an invisible div with relative position so that it takes up the height of the menu (because menu is absolute/fixed) -->
@@ -63,15 +66,16 @@ import Logo from "../components/logo.astro";
           menus.map((menu) => {
             return (
               <a
-                href={menu.url}
+                href={getRelativeLocaleUrl(Astro.currentLocale, menu.url)}
                 class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white"
               >
-                {menu.name}
+                {t(menu.name, Astro.currentLocale)}
               </a>
             );
           })
         }
       </div>
+      <LanguageSelector />
       <div
         id="darkToggle"
         class="relative flex items-center pl-6 ml-4 font-medium tracking-wide cursor-pointer text-neutral-800 group dark:text-white"

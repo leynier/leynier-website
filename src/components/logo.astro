@@ -1,8 +1,12 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const localeUrl = getRelativeLocaleUrl(Astro.currentLocale, "/");
+---
+
 <a
-  href="/"
+  href={localeUrl}
   class="h-5 text-base group relative z-30 flex items-center space-x-1.5 text-black dark:text-white font-semibold"
 >
- 
-<a href="/" class="logo" aria-label="Logo"></a>
+  <a href={localeUrl} class="logo" aria-label="Logo"></a>
 </a>
- 

@@ -1,14 +1,30 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import experiences from "../../data/experiences.json";
+import { t } from "../../lib/utils/il8n";
 import Button from "../button.astro";
 import ExperienceItem from "../experience-item.astro";
+
+const title = t(
+  "Highlighted Experiences",
+  "Experiencias Destacadas",
+  Astro.currentLocale
+);
+
+const labelButton = t(
+  "All Experiences",
+  "Todas las Experiencias",
+  Astro.currentLocale
+);
+
+const experiencesUrl = getRelativeLocaleUrl(Astro.currentLocale, "experiences");
 ---
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0">
   <h2
     class="text-2xl font-bold leading-10 tracking-tight text-neutral-900 dark:text-neutral-100"
   >
-    Highlighted Experiences
+    {title}
   </h2>
   <div class="px-5 py-10">
     {
@@ -24,12 +40,12 @@ import ExperienceItem from "../experience-item.astro";
                 <ExperienceItem
                   startDate={experience.startDate}
                   endDate={experience.endDate}
-                  role={experience.role.english}
-                  institution={experience.institution.english}
+                  role={t(experience.role, Astro.currentLocale)}
+                  institution={t(experience.institution, Astro.currentLocale)}
+                  description={t(experience.description, Astro.currentLocale)}
+                  tags={t(experience.tags, Astro.currentLocale)}
                   url={experience.url}
-                  description={experience.description.english}
                   logo={experience.logo}
-                  tags={experience.tags.english}
                 />
               </div>
             </>
@@ -39,6 +55,6 @@ import ExperienceItem from "../experience-item.astro";
   </div>
 
   <div class="flex items-center justify-center w-full py-5">
-    <Button text="All Experiences" link="/experiences" />
+    <Button text={labelButton} link={experiencesUrl} />
   </div>
 </section>

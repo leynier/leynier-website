@@ -1,0 +1,37 @@
+---
+import PageHeading from "../../components/page-heading.astro";
+import Project from "../../components/project.astro";
+import projects from "../../data/projects.json";
+import Layout from "../../layouts/main.astro";
+import addLangPaths from "../../lib/utils/add-lang-paths";
+import { t } from "../../lib/utils/il8n";
+
+export function getStaticPaths() {
+  return addLangPaths();
+}
+
+const headTitle = t("Projects", "Proyectos", Astro.currentLocale);
+---
+
+<Layout title={headTitle}>
+  <section class="max-w-4xl mx-auto px-7 lg:px-0">
+    <PageHeading title={headTitle} />
+
+    <div
+      class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2"
+    >
+      {
+        projects.map((project) => {
+          return (
+            <Project
+              slug={project.slug}
+              title={t(project.title, Astro.currentLocale)}
+              subtitle={t(project.subtitle, Astro.currentLocale)}
+              image={project.image}
+            />
+          );
+        })
+      }
+    </div>
+  </section>
+</Layout>

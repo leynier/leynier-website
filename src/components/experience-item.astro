@@ -1,7 +1,9 @@
 ---
+import { t } from "../lib/utils/il8n";
+
 const formatDate = (date: string | null): string => {
   if (date === null) {
-    return "Present";
+    return t("Present", "Presente", Astro.currentLocale);
   }
   const [year, month, day] = date.split("-");
   const dateObj = new Date(
@@ -14,7 +16,7 @@ const formatDate = (date: string | null): string => {
     month: month ? "long" : undefined,
     day: day ? "numeric" : undefined,
   };
-  return dateObj.toLocaleDateString("en-US", options);
+  return dateObj.toLocaleDateString(Astro.currentLocale, options);
 };
 
 const { logo, url, startDate, endDate, role, institution, description, tags } =

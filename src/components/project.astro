@@ -1,9 +1,13 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
 const { slug, title, subtitle, image } = Astro.props;
+
+const url = getRelativeLocaleUrl(Astro.currentLocale, `projects/${slug}`);
 ---
 
 <a
-  href={`projects/${slug}`}
+  href={url}
   class="relative flex flex-col items-stretch duration-300 ease-out p-7 sm:p-3 group h-100 rounded-2xl"
 >
   <span

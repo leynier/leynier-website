@@ -1,0 +1,24 @@
+---
+import Layout from "../../../layouts/post.astro";
+import { getAllPosts, getPost } from "../../../lib/hashnode/client";
+import addLangPaths from "../../../lib/utils/add-lang-paths";
+
+export async function getStaticPaths() {
+  const data = await getAllPosts();
+  const allPosts = data.publication.posts.edges;
+  return addLangPaths(
+    allPosts.map((post) => {
+      return {
+        params: { slug: post.node.slug },
+      };
+    })
+  );
+}
+
+const { slug } = Astro.params;
+const post = await getPost(slug);
+---
+
+<Layout post={post}>
+  <Fragment set:html={post.content.html} />
+</Layout>

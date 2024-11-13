@@ -1,18 +1,30 @@
 [
 	{
-		"name": "Home",
+		"name": {
+			"english": "Home",
+			"spanish": "Inicio"
+		},
 		"url": "/"
 	},
 	{
-		"name": "Experiences",
+		"name": {
+			"english": "Experiences",
+			"spanish": "Experiencias"
+		},
 		"url": "/experiences"
 	},
 	{
-		"name": "Projects",
+		"name": {
+			"english": "Projects",
+			"spanish": "Proyectos"
+		},
 		"url": "/projects"
 	},
 	{
-		"name": "Posts",
+		"name": {
+			"english": "Posts",
+			"spanish": "Publicaciones"
+		},
 		"url": "/posts"
 	}
 ]

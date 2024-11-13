@@ -1,16 +1,23 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { t } from "../lib/utils/il8n";
 import Layout from "./main.astro";
 
 const { project } = Astro.props;
-
-const title = `Project · ${project.title.english}`;
 ---
 
 <Layout
-  title={title}
-  description={project.description.english}
+  title={t(
+    `Project · ${project.title.english}`,
+    `Proyecto · ${project.title.spanish}`,
+    Astro.currentLocale
+  )}
+  description={t(project.description, Astro.currentLocale)}
   cover={project.image}
-  relativeUrl={`/projects/${project.slug}`}
+  relativeUrl={getRelativeLocaleUrl(
+    Astro.currentLocale,
+    `/projects/${project.slug}`
+  )}
 >
   <main
     class="relative z-30 max-w-6xl pb-1 mx-auto mt-10 bg-white dark:bg-neutral-950 md:rounded-t-md text-neutral-900"
@@ -29,7 +36,7 @@ const title = `Project · ${project.title.english}`;
       <h1
         class="w-full max-w-5xl mx-auto text-3xl font-bold leading-tight tracking-tighter text-left md:mb-12 md:text-4xl dark:text-neutral-100 lg:text-5xl md:leading-none"
       >
-        {project.title.english}
+        {t(project.title, Astro.currentLocale)}
       </h1>
     </div>
 
@@ -37,9 +44,13 @@ const title = `Project · ${project.title.english}`;
       class="w-full max-w-5xl mx-auto mb-20 prose-sm prose px-7 lg:px-0 lg:prose-lg dark:prose-invert prose-h1:my-3 prose-h2:my-3 prose-h3:my-3 prose-h4:my-3 prose-h5:my-3 prose-h6:my-3"
     >
       <p class="mt-2 text-lg text-gray-700 dark:text-gray-300">
-        {project.subtitle.english}
+        {t(project.subtitle, Astro.currentLocale)}
       </p>
-      <img src={project.image} alt={project.title} class="pb-4" />
+      <img
+        src={project.image}
+        alt={t(project.title, Astro.currentLocale)}
+        class="pb-4"
+      />
       <slot />
     </article>
   </main>

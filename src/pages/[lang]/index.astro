@@ -1,0 +1,46 @@
+---
+import Experiences from "../../components/home/experiences.astro";
+import Projects from "../../components/home/projects.astro";
+import RecentPosts from "../../components/home/recent-posts.astro";
+import ResumeSpanish from "../../components/home/resume-spanish.astro";
+import Resume from "../../components/home/resume.astro";
+import Separator from "../../components/home/separator.astro";
+import Layout from "../../layouts/main.astro";
+import addLangPaths from "../../lib/utils/add-lang-paths";
+import { t } from "../../lib/utils/il8n";
+
+export function getStaticPaths() {
+  return addLangPaths();
+}
+---
+
+<Layout>
+  {Astro.currentLocale === "es" ? <ResumeSpanish /> : <Resume />}
+
+  <Separator
+    text={t(
+      "check out my highlighted experiences",
+      "mire mis experiencias destacadas",
+      Astro.currentLocale
+    )}
+  />
+  <Experiences />
+
+  <Separator
+    text={t(
+      "check out my highlighted posts",
+      "mire mis proyectos destacados",
+      Astro.currentLocale
+    )}
+  />
+  <Projects />
+
+  <Separator
+    text={t(
+      "check out my recent posts",
+      "mire mis publicaciones recientes",
+      Astro.currentLocale
+    )}
+  />
+  <RecentPosts />
+</Layout>

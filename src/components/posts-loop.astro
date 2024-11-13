@@ -1,6 +1,8 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { getAllPosts } from "../lib/hashnode/client";
-import { formatDate } from "../lib/utils/formatDate";
+import { formatDate } from "../lib/utils/format-date";
+import { t } from "../lib/utils/il8n";
 
 const { count, reduce } = Astro.props;
 
@@ -10,9 +12,16 @@ const allPosts = data.publication.posts.edges;
 const postsLoop = allPosts.slice(0, count).map((post) => {
   return {
     ...(post.node || {}),
-    link: `/posts/${post.node.slug}`,
+    link: getRelativeLocaleUrl(Astro.currentLocale, `/posts/${post.node.slug}`),
   };
 });
+
+const posted = (post) =>
+  t(
+    `Posted on ${formatDate(post.publishedAt, Astro.currentLocale)} · ${post.readTimeInMinutes} min read`,
+    `Publicado el ${formatDate(post.publishedAt, Astro.currentLocale)} · ${post.readTimeInMinutes} min de lectura`,
+    Astro.currentLocale
+  );
 ---
 
 {
@@ -74,8 +83,7 @@ const postsLoop = allPosts.slice(0, count).map((post) => {
               </svg>
             </h2>
             <div class="mt-2.5 mb-3 text-xs font-medium text-neutral-800 dark:text-neutral-300">
-              Posted on {formatDate(post.publishedAt)} ·{" "}
-              {post.readTimeInMinutes} min read
+              {posted(post)}
             </div>
             {post.subtitle && (
               <h3 class="text-sm font-medium text-neutral-700 dark:text-neutral-300">

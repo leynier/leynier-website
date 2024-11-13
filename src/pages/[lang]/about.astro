@@ -1,8 +1,13 @@
 ---
-import ExperienceItem from "../components/experience-item.astro";
-import PageHeading from "../components/page-heading.astro";
-import experiences from "../data/experiences.json";
-import Layout from "../layouts/main.astro";
+import ExperienceItem from "../../components/experience-item.astro";
+import PageHeading from "../../components/page-heading.astro";
+import experiences from "../../data/experiences.json";
+import Layout from "../../layouts/main.astro";
+import addLangPaths from "../../lib/utils/add-lang-paths";
+
+export function getStaticPaths() {
+  return addLangPaths();
+}
 ---
 
 <Layout title="About Me">

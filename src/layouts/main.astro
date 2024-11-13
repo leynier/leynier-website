@@ -6,6 +6,7 @@ import {
   description as defaultDescription,
   tags as defaulTags,
 } from "../data/meta.ts";
+import { t } from "../lib/utils/il8n";
 
 let { title, description, cover, tags, relativeUrl } = Astro.props;
 
@@ -13,12 +14,12 @@ title = title
   ? `Leynier Gutiérrez González · ${title}`
   : "Leynier Gutiérrez González";
 
-description = description || defaultDescription;
+description = description || t(defaultDescription, Astro.currentLocale);
 
 const isDefaultCover = !cover;
 cover = cover || "/assets/images/avatar.jpg";
 
-tags = tags || defaulTags;
+tags = tags || t(defaulTags, Astro.currentLocale);
 tags = tags.join(", ");
 
 const url = relativeUrl
