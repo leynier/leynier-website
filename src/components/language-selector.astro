@@ -1,6 +1,7 @@
 ---
 import { getRelativeLocaleUrl, toCodes } from "astro:i18n";
 import config from "../../astro.config.mjs";
+import LanguageIcon from "./language-icon.astro"
 
 function changeCurrentUrlByLocale(newLocale: string): string {
   const regex = new RegExp(`^/${Astro.currentLocale}(/|$)`);
@@ -12,9 +13,9 @@ function changeCurrentUrlByLocale(newLocale: string): string {
 const getLabel = (locale: string) => {
   switch (locale) {
     case "es":
-      return "Español";
+      return "ES";
     default:
-      return "English";
+      return "EN";
   }
 };
 
@@ -30,36 +31,27 @@ const languages = toCodes(config.i18n.locales)
 
 <div class="relative group">
   <button
-    class="flex items-center gap-1 px-2 py-1 text-sm rounded hover:bg-gray-700"
+    class="flex items-center px-2 py-1 text-sm rounded"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-4 w-4"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-    >
-      <circle cx="12" cy="12" r="10"></circle>
-      <path
-        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-      ></path>
-      <path d="M2 12h20"></path>
-    </svg>
-    {getLabel(Astro.currentLocale)}
+    <LanguageIcon />
+    <span class="pl-1 font-medium text-[15px]">{getLabel(Astro.currentLocale)}</span>
   </button>
   <div
-    class="absolute right-0 mt-2 w-24 bg-popover rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
+    class="absolute mt-2 bg-popover rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
   >
-    {
+  <button class="flex items-center gap-1 px-2 py-1 ml-1 bg-gray-800 hover:bg-gray-700 text-white rounded-md transition-colors">
+    
+    <LanguageIcon />
+    <span class="font-semibold">{
       languages.map((lang) => (
         <a
           href={lang.path}
-          class="block px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground rounded-md"
+          class="block text-sm hover:bg-accent hover:text-accent-foreground rounded-md"
         >
           {lang.label}
         </a>
       ))
-    }
+    }</span>
+  </button> 
   </div>
 </div>
