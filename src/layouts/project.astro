@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import Button from "../components/button.astro";
 import { t } from "../lib/utils/il8n";
 import Layout from "./main.astro";
 
@@ -47,9 +48,22 @@ const { project } = Astro.props;
       <img
         src={project.data.image}
         alt={project.data.title}
-        class="pb-4"
       />
+      <a
+        href={project.data.url}
+        target="_blank"
+        class="flex items-center justify-center w-auto h-auto py-3 uppercase tracking-widest space-x-1 text-[0.6rem] border rounded-full bg-white dark:bg-neutral-900 text-neutral-800 font-bold dark:text-neutral-400 border-neutral-300 dark:border-neutral-800 shadow-sm leading-none gradient-text">
+        {t("Visit Project", "Visitar Proyecto", t(Astro))}
+      </a>
       <slot />
     </article>
+
+    <div class="flex items-center justify-center w-full">
+      <Button
+        link={project.data.url}
+        text={t("Visit Project", "Visitar Proyecto", t(Astro))}
+        otherTab={true}
+      />
+    </div>
   </main>
 </Layout>
