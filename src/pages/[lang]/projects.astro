@@ -4,9 +4,10 @@ import PageHeading from "../../components/page-heading.astro";
 import Project from "../../components/project.astro";
 import Layout from "../../layouts/main.astro";
 import addLangPaths from "../../lib/utils/add-lang-paths";
+import { getProjectsCollectionName } from "../../lib/utils/get-projects-collection-name";
 import { t } from "../../lib/utils/il8n";
 
-const collection = t(Astro) !== "es" ? "projects-en" : "projects-es";
+const collection = getProjectsCollectionName(Astro);
 const projects = await getCollection(collection);
 
 export function getStaticPaths() {

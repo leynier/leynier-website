@@ -2,11 +2,12 @@
 import type { CollectionEntry } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import Button from "../components/button.astro";
+import type { ProjectCollectionName } from "../lib/utils/get-projects-collection-name";
 import { t } from "../lib/utils/il8n";
 import Layout from "./main.astro";
 
 interface Props {
-  project: CollectionEntry<"projects-en">;
+  project: CollectionEntry<ProjectCollectionName>;
 }
 
 const { project } = Astro.props;

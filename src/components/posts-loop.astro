@@ -1,6 +1,7 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getAllPosts } from "../lib/hashnode/client";
+import type { Post } from "../lib/hashnode/schema";
 import { formatDate } from "../lib/utils/format-date";
 import { t } from "../lib/utils/il8n";
 
@@ -21,7 +22,7 @@ const postsLoop = selectedPosts.map((post) => {
   };
 });
 
-const posted = (post) =>
+const posted = (post: Post) =>
   t(
     `Posted on ${formatDate(post.publishedAt, t(Astro))} · ${post.readTimeInMinutes} min read`,
     `Publicado el ${formatDate(post.publishedAt, t(Astro))} · ${post.readTimeInMinutes} min de lectura`,

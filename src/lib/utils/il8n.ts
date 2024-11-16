@@ -1,11 +1,5 @@
 import config from "../../../astro.config.mjs";
 
-export function getLocale(astro: {
-  currentLocale?: string;
-}): string {
-  return astro.currentLocale || config.i18n?.defaultLocale || 'en';
-}
-
 export function t<T>(
   astro: { currentLocale: string | undefined },
 ): string;

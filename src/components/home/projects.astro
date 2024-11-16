@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { getProjectsCollectionName } from "../../lib/utils/get-projects-collection-name";
 import { t } from "../../lib/utils/il8n";
 import Button from "../button.astro";
 import Project from "../project.astro";
@@ -11,7 +12,7 @@ const labelButton = t("All Projects", "Todos los Proyectos", t(Astro));
 
 const projectsUrl = getRelativeLocaleUrl(t(Astro), "projects");
 
-const collection = t(Astro) !== "es" ? "projects-en" : "projects-es";
+const collection = getProjectsCollectionName(Astro);
 const projects = await getCollection(collection);
 ---
 
