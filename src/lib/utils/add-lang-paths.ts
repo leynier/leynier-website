@@ -12,7 +12,7 @@ interface Params {
 }
 
 export default function addLangPaths(items: Item[] = []): Item[] {
-    const langs = toCodes(config.i18n.locales);
+    const langs = toCodes(config.i18n?.locales ?? []);
     return items.length === 0
         ? langs.map(lang => ({ params: { lang } }))
         : items.flatMap(item => langs.map(lang => ({ ...item, params: { ...item.params, lang } })));

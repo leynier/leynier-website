@@ -5,7 +5,6 @@ const hashnodeUrl = "blog.leynier.dev";
 
 export const getHashnodeUrl = (slug: string): string => {
   return `/posts/${slug}`;
-  // return `https://${hashnodeUrl}/${slug}`;
 }
 
 export const getClient = () => {

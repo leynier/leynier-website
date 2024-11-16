@@ -11,7 +11,7 @@
   </div>
 </section>
 <script>
-  import Chart from 'chart.js/auto';
+  import Chart from "chart.js/auto";
 
   const labels = [
     "Oct 2017",
@@ -56,8 +56,9 @@
     { label: "Git", color: "#ec4899", data: [20, 30, 40, 50, 55, 60, 65, 70] },
   ];
 
-  
-  const canvasT = document.getElementById("skillsChart") as HTMLCanvasElement | null;
+  const canvasT = document.getElementById(
+    "skillsChart"
+  ) as HTMLCanvasElement | null;
   const ctx = canvasT.getContext("2d");
 
   const skillsChart = new Chart(ctx, {

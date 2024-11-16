@@ -66,10 +66,10 @@ import LanguageSelector from "./language-selector.astro";
           menus.map((menu) => {
             return (
               <a
-                href={getRelativeLocaleUrl(Astro.currentLocale, menu.url)}
+                href={getRelativeLocaleUrl(t(Astro), menu.url)}
                 class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white"
               >
-                {t(menu.name, Astro.currentLocale)}
+                {t(menu.name, t(Astro))}
               </a>
             );
           })

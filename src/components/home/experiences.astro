@@ -5,19 +5,11 @@ import { t } from "../../lib/utils/il8n";
 import Button from "../button.astro";
 import ExperienceItem from "../experience-item.astro";
 
-const title = t(
-  "Highlighted Experiences",
-  "Experiencias Destacadas",
-  Astro.currentLocale
-);
+const title = t("Highlighted Experiences", "Experiencias Destacadas", t(Astro));
 
-const labelButton = t(
-  "All Experiences",
-  "Todas las Experiencias",
-  Astro.currentLocale
-);
+const labelButton = t("All Experiences", "Todas las Experiencias", t(Astro));
 
-const experiencesUrl = getRelativeLocaleUrl(Astro.currentLocale, "experiences");
+const experiencesUrl = getRelativeLocaleUrl(t(Astro), "experiences");
 ---
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0">
@@ -40,10 +32,10 @@ const experiencesUrl = getRelativeLocaleUrl(Astro.currentLocale, "experiences");
                 <ExperienceItem
                   startDate={experience.startDate}
                   endDate={experience.endDate}
-                  role={t(experience.role, Astro.currentLocale)}
-                  institution={t(experience.institution, Astro.currentLocale)}
-                  description={t(experience.description, Astro.currentLocale)}
-                  tags={t(experience.tags, Astro.currentLocale)}
+                  role={t(experience.role, t(Astro))}
+                  institution={t(experience.institution, t(Astro))}
+                  description={t(experience.description, t(Astro))}
+                  tags={t(experience.tags, t(Astro))}
                   url={experience.url}
                   logo={experience.logo}
                 />

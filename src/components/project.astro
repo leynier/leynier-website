@@ -1,9 +1,17 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { t } from "../lib/utils/il8n";
+
+interface Project {
+  slug: string;
+  title: string;
+  subtitle: string;
+  image: string;
+}
 
 const { slug, title, subtitle, image } = Astro.props;
 
-const url = getRelativeLocaleUrl(Astro.currentLocale, `projects/${slug}`);
+const url = getRelativeLocaleUrl(t(Astro), `projects/${slug}`);
 ---
 
 <a

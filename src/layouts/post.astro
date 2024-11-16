@@ -4,14 +4,18 @@ import { formatDate } from "../lib/utils/format-date";
 import { t } from "../lib/utils/il8n";
 import Layout from "./main.astro";
 
-const { post } = Astro.props as { post: Post };
+interface Props {
+  post: Post;
+}
 
-const title = `${t("Post", "Publicación", Astro.currentLocale)} · ${post.seo?.title ?? post.title}`;
+const { post } = Astro.props;
+
+const title = `${t("Post", "Publicación", t(Astro))} · ${post.seo?.title ?? post.title}`;
 
 const posted = t(
-  `Posted on ${formatDate(post.publishedAt, Astro.currentLocale)} · ${post.readTimeInMinutes} min read`,
-  `Publicado el ${formatDate(post.publishedAt, Astro.currentLocale)} · ${post.readTimeInMinutes} min de lectura`,
-  Astro.currentLocale
+  `Posted on ${formatDate(post.publishedAt, t(Astro))} · ${post.readTimeInMinutes} min read`,
+  `Publicado el ${formatDate(post.publishedAt, t(Astro))} · ${post.readTimeInMinutes} min de lectura`,
+  t(Astro)
 );
 ---
 

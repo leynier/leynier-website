@@ -10,15 +10,15 @@ export function getStaticPaths() {
   return addLangPaths();
 }
 
-const headTitle = t("Experiences", "Experiencias", Astro.currentLocale);
+const headTitle = t("Experiences", "Experiencias", t(Astro));
 
 const professionalExperiences = t(
   "Professional Experiences",
   "Experiencias Profesionales",
-  Astro.currentLocale
+  t(Astro)
 );
 
-const education = t("Education", "Educación", Astro.currentLocale);
+const education = t("Education", "Educación", t(Astro));
 ---
 
 <Layout title={headTitle}>
@@ -41,10 +41,10 @@ const education = t("Education", "Educación", Astro.currentLocale);
                   <ExperienceItem
                     startDate={experience.startDate}
                     endDate={experience.endDate}
-                    role={t(experience.role, Astro.currentLocale)}
-                    institution={t(experience.institution, Astro.currentLocale)}
-                    description={t(experience.description, Astro.currentLocale)}
-                    tags={t(experience.tags, Astro.currentLocale)}
+                    role={t(experience.role, t(Astro))}
+                    institution={t(experience.institution, t(Astro))}
+                    description={t(experience.description, t(Astro))}
+                    tags={t(experience.tags, t(Astro))}
                     url={experience.url}
                     logo={experience.logo}
                   />

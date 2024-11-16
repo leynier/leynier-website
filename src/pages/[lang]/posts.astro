@@ -9,7 +9,7 @@ export function getStaticPaths() {
   return addLangPaths();
 }
 
-const headTitle = t("Posts", "Publicaciones", Astro.currentLocale);
+const headTitle = t("Posts", "Publicaciones", t(Astro));
 ---
 
 <Layout title={headTitle}>
