@@ -36,14 +36,12 @@ const languages = toCodes(config.i18n?.locales ?? [])
     <span class="pl-1 font-medium text-[15px]">{getLabel(t(Astro))}</span>
   </button>
   <div
-    class="absolute mt-2 bg-popover rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
-  >
+    class="absolute mt-2 bg-popover rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
     {
       languages.map((lang) => (
         <a
           href={lang.path}
-          class="flex items-center gap-1 px-2 py-1 ml-1 bg-gray-800 hover:bg-gray-700 text-white rounded-md transition-colors"
-        >
+          class="flex items-center gap-1 px-2 py-1 ml-1 bg-gray-800 hover:bg-gray-700 text-white rounded-md transition-colors">
           <LanguageIcon />
           <span class="font-semibold">{lang.label}</span>
         </a>
