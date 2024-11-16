@@ -34,7 +34,7 @@ const languages = toCodes(config.i18n.locales)
     class="flex items-center px-2 py-1 text-sm rounded"
   >
     <LanguageIcon />
-    <span class="pl-1 font-medium text-[15px]">{getLabel(Astro.currentLocale)}</span>
+    <span class="pl-1 font-medium text-[16px] sm:text-[16px] xs:text-[16px] md:text-[15px] lg:text-[15px] xl:text-[15px]">{getLabel(Astro.currentLocale)}</span>
   </button>
   <div
     class="absolute mt-2 bg-popover rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
