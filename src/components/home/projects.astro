@@ -1,44 +1,37 @@
 ---
+import { getCollection } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import projects from "../../data/projects.json";
 import { t } from "../../lib/utils/il8n";
 import Button from "../button.astro";
 import Project from "../project.astro";
 
-const title = t(
-  "Highlighted Projects",
-  "Proyectos Destacados",
-  Astro.currentLocale
-);
+const title = t("Highlighted Projects", "Proyectos Destacados", t(Astro));
 
-const labelButton = t(
-  "All Projects",
-  "Todos los Proyectos",
-  Astro.currentLocale
-);
+const labelButton = t("All Projects", "Todos los Proyectos", t(Astro));
 
-const projectsUrl = getRelativeLocaleUrl(Astro.currentLocale, "projects");
+const projectsUrl = getRelativeLocaleUrl(t(Astro), "projects");
+
+const collection = t(Astro) !== "es" ? "projects-en" : "projects-es";
+const projects = await getCollection(collection);
 ---
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0">
   <h2
-    class="text-2xl font-bold leading-10 tracking-tight text-neutral-900 dark:text-neutral-100"
-  >
+    class="text-2xl font-bold leading-10 tracking-tight text-neutral-900 dark:text-neutral-100">
     {title}
   </h2>
   <div
-    class="grid items-stretch w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 mt-7"
-  >
+    class="grid items-stretch w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 mt-7">
     {
       projects
-        .filter((project) => project.highlighted)
+        .filter((project) => project.data.highlighted)
         .map((project) => {
           return (
             <Project
               slug={project.slug}
-              title={t(project.title, Astro.currentLocale)}
-              subtitle={t(project.subtitle, Astro.currentLocale)}
-              image={project.image}
+              title={project.data.title}
+              subtitle={project.data.subtitle}
+              image={project.data.image}
             />
           );
         })
@@ -46,6 +39,9 @@ const projectsUrl = getRelativeLocaleUrl(Astro.currentLocale, "projects");
   </div>
 
   <div class="flex items-center justify-center w-full py-5">
-    <Button text={labelButton} link={projectsUrl} />
+    <Button
+      text={labelButton}
+      link={projectsUrl}
+    />
   </div>
 </section>

@@ -1,12 +1,16 @@
 ---
+interface Props {
+  link: string;
+  text: string;
+}
+
 const { link, text } = Astro.props;
 ---
 
 <a
   href={link}
   type="button"
-  class="btn inline-flex w-auto px-4 py-2 mt-5 text-xs font-semibold"
->
+  class="btn inline-flex w-auto px-4 py-2 mt-5 text-xs font-semibold">
   <strong>{text}</strong>
   <div id="container-stars">
     <div id="stars"></div>

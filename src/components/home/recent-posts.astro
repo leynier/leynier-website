@@ -4,33 +4,30 @@ import { t } from "../../lib/utils/il8n";
 import Button from "../button.astro";
 import PostsLoop from "../posts-loop.astro";
 
-const title = t("Recent Posts", "Publicaciones Recientes", Astro.currentLocale);
+const title = t("Recent Posts", "Publicaciones Recientes", t(Astro));
 
-const labelButton = t(
-  "All Posts",
-  "Todas las Publicaciones",
-  Astro.currentLocale
-);
+const labelButton = t("All Posts", "Todas las Publicaciones", t(Astro));
 
-const postsUrl = getRelativeLocaleUrl(Astro.currentLocale, "posts");
+const postsUrl = getRelativeLocaleUrl(t(Astro), "posts");
 ---
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0">
   <h2
-    class="text-2xl font-bold leading-10 tracking-tight text-neutral-900 dark:text-neutral-100"
-  >
+    class="text-2xl font-bold leading-10 tracking-tight text-neutral-900 dark:text-neutral-100">
     {title}
   </h2>
 
   <div class="w-full max-w-4xl mx-auto my-7 xl:px-0">
     <div
-      class="flex flex-col items-start justify-start md:flex-row md:space-x-7"
-    >
+      class="flex flex-col items-start justify-start md:flex-row md:space-x-7">
       <div class="space-y-7">
-        <PostsLoop count="2" reduce="true" />
+        <PostsLoop count={2} />
 
         <div class="flex items-center justify-center w-full py-5">
-          <Button text={labelButton} link={postsUrl} />
+          <Button
+            text={labelButton}
+            link={postsUrl}
+          />
         </div>
       </div>
     </div>

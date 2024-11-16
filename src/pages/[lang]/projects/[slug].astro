@@ -1,22 +1,27 @@
 ---
-import projects from "../../../data/projects.json";
+import { getCollection, getEntry } from "astro:content";
 import Layout from "../../../layouts/project.astro";
 import addLangPaths from "../../../lib/utils/add-lang-paths";
+import { t } from "../../../lib/utils/il8n";
 
 export async function getStaticPaths() {
+  const collection = t(Astro) !== "es" ? "projects-en" : "projects-es";
+  const projects = await getCollection(collection);
   return addLangPaths(
-    projects.map((project) => {
+    projects.map((post) => {
       return {
-        params: { slug: project.slug },
+        params: { slug: post.slug },
       };
     })
   );
 }
 
 const { slug } = Astro.params;
-const project = projects.find((project) => project.slug === slug);
+const collection = t(Astro) !== "es" ? "projects-en" : "projects-es";
+const project = await getEntry(collection, slug);
+const { Content } = await project.render();
 ---
 
 <Layout project={project}>
-  <Fragment set:html={project.description.english} />
+  <Content />
 </Layout>
