@@ -59,107 +59,113 @@
   const canvasT = document.getElementById(
     "skillsChart"
   ) as HTMLCanvasElement | null;
-  const ctx = canvasT.getContext("2d");
+  const ctx = canvasT?.getContext("2d");
 
-  const skillsChart = new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: labels,
-      datasets: datasets.map((dataset) => ({
-        label: dataset.label,
-        data: dataset.data,
-        backgroundColor: `${dataset.color}33`,
-        borderColor: dataset.color,
-        borderWidth: 2,
-        fill: true,
-        tension: 0.3,
-        pointRadius: 0,
-        pointHoverRadius: 4,
-        pointHoverBackgroundColor: dataset.color,
-        pointHoverBorderColor: "#fff",
-        pointHoverBorderWidth: 2,
-      })),
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: {
-        mode: "nearest",
-        axis: "x",
-        intersect: false,
+  if (ctx) {
+    const skillsChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: labels,
+        datasets: datasets.map((dataset) => ({
+          label: dataset.label,
+          data: dataset.data,
+          backgroundColor: `${dataset.color}33`,
+          borderColor: dataset.color,
+          borderWidth: 2,
+          fill: true,
+          tension: 0.3,
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          pointHoverBackgroundColor: dataset.color,
+          pointHoverBorderColor: "#fff",
+          pointHoverBorderWidth: 2,
+        })),
       },
-      scales: {
-        x: {
-          grid: {
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+          mode: "nearest",
+          axis: "x",
+          intersect: false,
+        },
+        scales: {
+          x: {
+            grid: {
+              display: false,
+            },
+            ticks: {
+              color: "#94a3b8",
+              font: {
+                size: 10,
+              },
+            },
+          },
+          y: {
+            grid: {
+              color: "#334155",
+            },
+            ticks: {
+              color: "#94a3b8",
+              font: {
+                size: 10,
+              },
+            },
+          },
+        },
+        plugins: {
+          legend: {
             display: false,
           },
-          ticks: {
-            color: "#94a3b8",
-            font: {
-              size: 10,
-            },
-          },
-        },
-        y: {
-          grid: {
-            color: "#334155",
-          },
-          ticks: {
-            color: "#94a3b8",
-            font: {
-              size: 10,
-            },
-          },
-        },
-      },
-      plugins: {
-        legend: {
-          display: false,
-        },
-        tooltip: {
-          backgroundColor: "#1e293b",
-          titleColor: "#e2e8f0",
-          bodyColor: "#e2e8f0",
-          borderColor: "#334155",
-          borderWidth: 1,
-          padding: 12,
-          displayColors: true,
-          callbacks: {
-            label: function (context) {
-              return `${context.dataset.label}: ${context.parsed.y}%`;
+          tooltip: {
+            backgroundColor: "#1e293b",
+            titleColor: "#e2e8f0",
+            bodyColor: "#e2e8f0",
+            borderColor: "#334155",
+            borderWidth: 1,
+            padding: 12,
+            displayColors: true,
+            callbacks: {
+              label: function (context) {
+                return `${context.dataset.label}: ${context.parsed.y}%`;
+              },
             },
           },
         },
       },
-    },
-  });
-
-  // Leyenda personalizada
-  const legendContainer = document.getElementById("customLegend");
-  datasets.forEach((dataset) => {
-    const item = document.createElement("div");
-    item.className = "legend-item";
-
-    const color = document.createElement("div");
-    color.className = "legend-color";
-    color.style.backgroundColor = dataset.color;
-
-    const label = document.createElement("span");
-    label.textContent = dataset.label;
-
-    item.appendChild(color);
-    item.appendChild(label);
-
-    // Interactividad de la leyenda
-    item.addEventListener("mouseenter", () => {
-      const datasetIndex = skillsChart.data.datasets.findIndex(
-        (d) => d.label === dataset.label
-      );
-      const meta = skillsChart.getDatasetMeta(datasetIndex);
-      meta.hidden = false;
-      skillsChart.update();
     });
 
-    legendContainer.appendChild(item);
-  });
+    // Leyenda personalizada
+    const legendContainer = document.getElementById("customLegend");
+
+    datasets.forEach((dataset) => {
+      const item = document.createElement("div");
+      item.className = "legend-item";
+
+      const color = document.createElement("div");
+      color.className = "legend-color";
+      color.style.backgroundColor = dataset.color;
+
+      const label = document.createElement("span");
+      label.textContent = dataset.label;
+
+      item.appendChild(color);
+      item.appendChild(label);
+
+      // Interactividad de la leyenda
+      item.addEventListener("mouseenter", () => {
+        if (!skillsChart) {
+          return;
+        }
+        const datasetIndex = skillsChart.data.datasets.findIndex(
+          (d) => d.label === dataset.label
+        );
+        const meta = skillsChart.getDatasetMeta(datasetIndex);
+        meta.hidden = false;
+        skillsChart.update();
+      });
+
+      if (legendContainer) legendContainer.appendChild(item);
+    });
+  }
 </script>

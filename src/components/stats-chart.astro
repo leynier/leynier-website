@@ -85,6 +85,7 @@
 
   function renderGitHubStats(stats) {
     const container = document.getElementById("github-stats");
+    if (!container) return;
     container.innerHTML = `
             <h2 class="text-xl font-semibold mb-4 text-neutral-600 dark:text-neutral-300">${stats.name}'s GitHub Stats</h2>
             <div class="space-y-2">

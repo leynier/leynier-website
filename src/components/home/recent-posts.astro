@@ -23,7 +23,7 @@ const postsUrl = getRelativeLocaleUrl(t(Astro), "posts");
       class="flex flex-col items-start justify-start md:flex-row md:space-x-7"
     >
       <div class="space-y-7">
-        <PostsLoop count="2" reduce="true" />
+        <PostsLoop count={2} />
 
         <div class="flex items-center justify-center w-full py-5">
           <Button text={labelButton} link={postsUrl} />
