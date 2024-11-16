@@ -5,15 +5,16 @@ import { formatDate } from "../lib/utils/format-date";
 import { t } from "../lib/utils/il8n";
 
 interface Props {
-  count: number;
+  count?: number;
 }
 
 const { count } = Astro.props;
 
 const data = await getAllPosts();
 const allPosts = data.publication.posts.edges;
+const selectedPosts = count !== undefined ? allPosts.slice(0, count) : allPosts;
 
-const postsLoop = allPosts.slice(0, count).map((post) => {
+const postsLoop = selectedPosts.map((post) => {
   return {
     ...(post.node || {}),
     link: getRelativeLocaleUrl(t(Astro), `/posts/${post.node.slug}`),
