@@ -38,22 +38,16 @@ const languages = toCodes(config.i18n?.locales ?? [])
   <div
     class="absolute mt-2 bg-popover rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
   >
-    <button
-      class="flex items-center gap-1 px-2 py-1 ml-1 bg-gray-800 hover:bg-gray-700 text-white rounded-md transition-colors"
-    >
-      <LanguageIcon />
-      <span class="font-semibold"
-        >{
-          languages.map((lang) => (
-            <a
-              href={lang.path}
-              class="block text-sm hover:bg-accent hover:text-accent-foreground rounded-md"
-            >
-              {lang.label}
-            </a>
-          ))
-        }</span
-      >
-    </button>
+    {
+      languages.map((lang) => (
+        <a
+          href={lang.path}
+          class="flex items-center gap-1 px-2 py-1 ml-1 bg-gray-800 hover:bg-gray-700 text-white rounded-md transition-colors"
+        >
+          <LanguageIcon />
+          <span class="font-semibold">{lang.label}</span>
+        </a>
+      ))
+    }
   </div>
 </div>
