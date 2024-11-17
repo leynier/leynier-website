@@ -1,73 +1,89 @@
-<section class="mt-16"> 
-    <div class="flex items-center justify-center">
-     <div id="github-stats" class="bg-neutral-100 dark:bg-neutral-900 shadow-md p-6 rounded-lg w-80 text-neutral-900"></div>
+<section class="mt-16">
+  <div class="flex items-center justify-center">
+    <div
+      id="github-stats"
+      class="bg-neutral-100 dark:bg-neutral-900 shadow-md p-6 rounded-lg w-80 text-neutral-900">
     </div>
-    <div class="center text-center items-center justify-center justify-items-center content-center mt-16">
-      <h2 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4 text-center pt-5 pb-5">GitHub Trophies</h2>
-      <img src="https://github-profile-trophy.vercel.app/?username=leynier&theme=onedark&no-frame=true&margin-w=15" alt="GitHub Trophies" class="rounded-lg shadow-lg">
-    </div>
+  </div>
+  <div
+    class="center text-center items-center justify-center justify-items-center content-center mt-16">
+    <h2
+      class="text-xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4 text-center pt-5 pb-5">
+      GitHub Trophies
+    </h2>
+    <img
+      src="https://github-profile-trophy.vercel.app/?username=leynier&theme=onedark&no-frame=true&margin-w=15"
+      alt="GitHub Trophies"
+      class="rounded-lg shadow-lg"
+    />
+  </div>
 </section>
 
 <script>
-    async function fetchGitHubStats(username) {
-       
-            // Fetch user data
-            const userResponse = await fetch(`https://api.github.com/users/${username}`);
-            const userData = await userResponse.json();
+  async function fetchGitHubStats(username) {
+    // Fetch user data
+    const userResponse = await fetch(
+      `https://api.github.com/users/${username}`
+    );
+    const userData = await userResponse.json();
 
-            // Fetch repositories (limit to 100 to avoid API rate limit)
-            const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
-            const reposData = await reposResponse.json();
+    // Fetch repositories (limit to 100 to avoid API rate limit)
+    const reposResponse = await fetch(
+      `https://api.github.com/users/${username}/repos?per_page=100`
+    );
+    const reposData = await reposResponse.json();
 
-            // Verificar si reposData es un array
-            // if (!Array.isArray(reposData)) {
-            //     console.error('Error: reposData no es un array', reposData);
-            //     return;  // Salir si reposData no es iterable
-            // }
+    // Verificar si reposData es un array
+    // if (!Array.isArray(reposData)) {
+    //     console.error('Error: reposData no es un array', reposData);
+    //     return;  // Salir si reposData no es iterable
+    // }
 
-            // Initialize stats
-            let totalStars = 0;
-            let totalCommits = 0;
-            let totalPRs = 0;
-            let totalIssues = 0;
-            let totalReposContributed = reposData.length ?? 0;
+    // Initialize stats
+    let totalStars = 0;
+    let totalCommits = 0;
+    let totalPRs = 0;
+    let totalIssues = 0;
+    let totalReposContributed = reposData.length ?? 0;
 
-            // Loop through each repo to calculate stars, commits, PRs, and issues
-          if(Array.isArray(reposData))
-            for (const repo of reposData) {
-                // Sum stars
-                totalStars += repo.stargazers_count;
+    // Loop through each repo to calculate stars, commits, PRs, and issues
+    if (Array.isArray(reposData))
+      for (const repo of reposData) {
+        // Sum stars
+        totalStars += repo.stargazers_count;
 
-                // Sum issues count per repository
-                totalIssues += repo.open_issues_count || 0;
+        // Sum issues count per repository
+        totalIssues += repo.open_issues_count || 0;
 
-                // Fetch commits for each repo (only the first 30 to avoid API limit)
-                const commitsResponse = await fetch(`${repo.url}/commits?author=${username}&per_page=30`);
-                const commitsData = await commitsResponse.json();
-                
-                if (Array.isArray(commitsData)) {
-                    totalCommits += commitsData.length;
-                }
+        // Fetch commits for each repo (only the first 30 to avoid API limit)
+        const commitsResponse = await fetch(
+          `${repo.url}/commits?author=${username}&per_page=30`
+        );
+        const commitsData = await commitsResponse.json();
 
-                // Assuming each forked repo has PRs contributed
-                if (!repo.fork) totalPRs++;
-            }
+        if (Array.isArray(commitsData)) {
+          totalCommits += commitsData.length;
+        }
 
-            // Render stats in HTML
-            renderGitHubStats({
-                name: userData.name || username,
-                totalStars,
-                totalCommits,
-                totalPRs,
-                totalIssues,
-                totalReposContributed
-            });
-         
-    }
+        // Assuming each forked repo has PRs contributed
+        if (!repo.fork) totalPRs++;
+      }
 
-    function renderGitHubStats(stats) {
-        const container = document.getElementById('github-stats');
-        container.innerHTML = `
+    // Render stats in HTML
+    renderGitHubStats({
+      name: userData.name || username,
+      totalStars,
+      totalCommits,
+      totalPRs,
+      totalIssues,
+      totalReposContributed,
+    });
+  }
+
+  function renderGitHubStats(stats) {
+    const container = document.getElementById("github-stats");
+    if (!container) return;
+    container.innerHTML = `
             <h2 class="text-xl font-semibold mb-4 text-neutral-600 dark:text-neutral-300">${stats.name}'s GitHub Stats</h2>
             <div class="space-y-2">
                 <p class="flex items-center text-neutral-600 dark:text-neutral-300">
@@ -87,7 +103,7 @@
                 </p>
             </div>
         `;
-    }
- 
-    fetchGitHubStats('leynier');
+  }
+
+  fetchGitHubStats("leynier");
 </script>

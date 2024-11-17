@@ -1,57 +1,70 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import Button from "../components/button.astro";
+import type { ProjectCollectionName } from "../lib/utils/get-projects-collection-name";
 import { t } from "../lib/utils/il8n";
 import Layout from "./main.astro";
+
+interface Props {
+  project: CollectionEntry<ProjectCollectionName>;
+}
 
 const { project } = Astro.props;
 ---
 
 <Layout
   title={t(
-    `Project · ${project.title.english}`,
-    `Proyecto · ${project.title.spanish}`,
-    Astro.currentLocale
+    `Project · ${project.data.title}`,
+    `Proyecto · ${project.data.title}`,
+    t(Astro)
   )}
-  description={t(project.description, Astro.currentLocale)}
-  cover={project.image}
+  description={project.data.subtitle}
+  cover={project.data.image}
   relativeUrl={getRelativeLocaleUrl(
-    Astro.currentLocale,
+    t(Astro) || "en",
     `/projects/${project.slug}`
-  )}
->
+  )}>
   <main
-    class="relative z-30 max-w-6xl pb-1 mx-auto mt-10 bg-white dark:bg-neutral-950 md:rounded-t-md text-neutral-900"
-  >
+    class="relative z-30 max-w-6xl pb-1 mx-auto mt-10 bg-white dark:bg-neutral-950 md:rounded-t-md text-neutral-900">
     <div
-      class="relative flex flex-col px-5 pt-6 border-t border-b-0 md:border-r md:border-l md:pt-20 lg:px-0 justify-stretch md:rounded-t-2xl border-neutral-200 dark:border-neutral-800"
-    >
+      class="relative flex flex-col px-5 pt-6 border-t border-b-0 md:border-r md:border-l md:pt-20 lg:px-0 justify-stretch md:rounded-t-2xl border-neutral-200 dark:border-neutral-800">
       <div
-        class="absolute top-0 left-0 hidden w-px h-full mt-1 -translate-x-px md:block bg-gradient-to-b from-transparent to-white dark:to-neutral-950"
-      >
+        class="absolute top-0 left-0 hidden w-px h-full mt-1 -translate-x-px md:block bg-gradient-to-b from-transparent to-white dark:to-neutral-950">
       </div>
       <div
-        class="absolute top-0 right-0 hidden w-px h-full mt-1 translate-x-px md:block bg-gradient-to-b from-transparent to-white dark:to-neutral-950"
-      >
+        class="absolute top-0 right-0 hidden w-px h-full mt-1 translate-x-px md:block bg-gradient-to-b from-transparent to-white dark:to-neutral-950">
       </div>
       <h1
-        class="w-full max-w-5xl mx-auto text-3xl font-bold leading-tight tracking-tighter text-left md:mb-12 md:text-4xl dark:text-neutral-100 lg:text-5xl md:leading-none"
-      >
-        {t(project.title, Astro.currentLocale)}
+        class="w-full max-w-5xl mx-auto text-3xl font-bold leading-tight tracking-tighter text-left md:mb-12 md:text-4xl dark:text-neutral-100 lg:text-5xl md:leading-none">
+        {project.data.title}
       </h1>
     </div>
 
     <article
-      class="w-full max-w-5xl mx-auto mb-20 prose-sm prose px-7 lg:px-0 lg:prose-lg dark:prose-invert prose-h1:my-3 prose-h2:my-3 prose-h3:my-3 prose-h4:my-3 prose-h5:my-3 prose-h6:my-3"
-    >
+      class="w-full max-w-5xl mx-auto mb-20 prose-sm prose px-7 lg:px-0 lg:prose-lg dark:prose-invert prose-h1:my-3 prose-h2:my-3 prose-h3:my-3 prose-h4:my-3 prose-h5:my-3 prose-h6:my-3">
       <p class="mt-2 text-lg text-gray-700 dark:text-gray-300">
-        {t(project.subtitle, Astro.currentLocale)}
+        {project.data.subtitle}
       </p>
       <img
-        src={project.image}
-        alt={t(project.title, Astro.currentLocale)}
-        class="pb-4"
+        src={project.data.image}
+        alt={project.data.title}
       />
+      <a
+        href={project.data.url}
+        target="_blank"
+        class="flex items-center justify-center w-auto h-auto py-3 uppercase tracking-widest space-x-1 text-[0.6rem] border rounded-full bg-white dark:bg-neutral-900 text-neutral-800 font-bold dark:text-neutral-400 border-neutral-300 dark:border-neutral-800 shadow-sm leading-none gradient-text">
+        {t("Visit Project", "Visitar Proyecto", t(Astro))}
+      </a>
       <slot />
     </article>
+
+    <div class="flex items-center justify-center w-full">
+      <Button
+        link={project.data.url}
+        text={t("Visit Project", "Visitar Proyecto", t(Astro))}
+        otherTab={true}
+      />
+    </div>
   </main>
 </Layout>

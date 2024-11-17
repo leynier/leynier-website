@@ -1,16 +1,20 @@
 ---
+import { getCollection } from "astro:content";
 import PageHeading from "../../components/page-heading.astro";
 import Project from "../../components/project.astro";
-import projects from "../../data/projects.json";
 import Layout from "../../layouts/main.astro";
 import addLangPaths from "../../lib/utils/add-lang-paths";
+import { getProjectsCollectionName } from "../../lib/utils/get-projects-collection-name";
 import { t } from "../../lib/utils/il8n";
+
+const collection = getProjectsCollectionName(Astro);
+const projects = await getCollection(collection);
 
 export function getStaticPaths() {
   return addLangPaths();
 }
 
-const headTitle = t("Projects", "Proyectos", Astro.currentLocale);
+const headTitle = t("Projects", "Proyectos", t(Astro));
 ---
 
 <Layout title={headTitle}>
@@ -18,16 +22,15 @@ const headTitle = t("Projects", "Proyectos", Astro.currentLocale);
     <PageHeading title={headTitle} />
 
     <div
-      class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2"
-    >
+      class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2">
       {
         projects.map((project) => {
           return (
             <Project
               slug={project.slug}
-              title={t(project.title, Astro.currentLocale)}
-              subtitle={t(project.subtitle, Astro.currentLocale)}
-              image={project.image}
+              title={project.data.title}
+              subtitle={project.data.subtitle}
+              image={project.data.image}
             />
           );
         })

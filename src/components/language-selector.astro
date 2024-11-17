@@ -1,10 +1,11 @@
 ---
 import { getRelativeLocaleUrl, toCodes } from "astro:i18n";
 import config from "../../astro.config.mjs";
-import LanguageIcon from "./language-icon.astro"
+import { t } from "../lib/utils/il8n";
+import LanguageIcon from "./language-icon.astro";
 
 function changeCurrentUrlByLocale(newLocale: string): string {
-  const regex = new RegExp(`^/${Astro.currentLocale}(/|$)`);
+  const regex = new RegExp(`^/${t(Astro)}(/|$)`);
   const url = Astro.url.pathname;
   const urlWithoutLocale = url.replace(regex, "/");
   return getRelativeLocaleUrl(newLocale, urlWithoutLocale);
@@ -19,8 +20,8 @@ const getLabel = (locale: string) => {
   }
 };
 
-const languages = toCodes(config.i18n.locales)
-  .filter((locale) => locale !== Astro.currentLocale)
+const languages = toCodes(config.i18n?.locales ?? [])
+  .filter((locale) => locale !== t(Astro))
   .map((locale) => {
     return {
       path: changeCurrentUrlByLocale(locale),
@@ -30,28 +31,24 @@ const languages = toCodes(config.i18n.locales)
 ---
 
 <div class="relative group">
-  <button
-    class="flex items-center px-2 py-1 text-sm rounded"
-  >
+  <button class="flex items-center px-2 py-1 text-sm rounded">
     <LanguageIcon />
-    <span class="pl-1 font-medium text-[16px] sm:text-[16px] xs:text-[16px] md:text-[15px] lg:text-[15px] xl:text-[15px]">{getLabel(Astro.currentLocale)}</span>
+    <span
+      class="pl-1 font-medium text-[16px] sm:text-[16px] xs:text-[16px] md:text-[15px] lg:text-[15px] xl:text-[15px]"
+      >{getLabel(t(Astro))}</span
+    >
   </button>
   <div
-    class="absolute mt-2 bg-popover rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
-  >
-  <button class="flex items-center gap-1 px-2 py-1 ml-1 bg-gray-800 hover:bg-gray-700 text-white rounded-md transition-colors">
-    
-    <LanguageIcon />
-    <span class="font-semibold">{
+    class="absolute mt-2 bg-popover rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+    {
       languages.map((lang) => (
         <a
           href={lang.path}
-          class="block text-sm hover:bg-accent hover:text-accent-foreground rounded-md"
-        >
-          {lang.label}
+          class="flex items-center gap-1 px-2 py-1 ml-1 bg-gray-800 hover:bg-gray-700 text-white rounded-md transition-colors">
+          <LanguageIcon />
+          <span class="font-semibold">{lang.label}</span>
         </a>
       ))
-    }</span>
-  </button> 
+    }
   </div>
 </div>
