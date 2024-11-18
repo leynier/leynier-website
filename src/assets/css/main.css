@@ -370,3 +370,24 @@ strong {
   background-position: 0 0, 100% 100%, 0 100%, 100% 0;
   animation: border-dance 40s infinite linear; 
 }
+
+@media screen and (min-width: 460px){
+  .adjust-size-dashed-tablet{
+    width:400px;
+    height:400px;
+  }
+  .adjust-size-greet-tablet{
+    width:100px;
+    height:100px;
+  }
+}
+@media screen and (min-width: 591px){ 
+  .adjust-size-greet-tablet{ 
+    margin-left:30px;
+  }
+}
+@media screen and (min-width: 665px){ 
+  .adjust-size-greet-tablet{ 
+    margin-left:100px;
+  }
+}
