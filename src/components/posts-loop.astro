@@ -92,9 +92,9 @@ const posted = (post: Post) =>
               </h3>
             )}
           </div>
-          {post.coverImage?.url && (
+          {(post.ogMetaData?.image ?? post.coverImage?.url) && (
             <img
-              src={post.coverImage?.url}
+              src={post.ogMetaData?.image ?? post.coverImage?.url}
               alt={post.title}
               class="w-full md:w-1/3 h-auto mt-5 mb-2 rounded-lg ml-0 md:ml-4"
             />
