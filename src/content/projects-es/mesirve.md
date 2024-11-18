@@ -1,7 +1,7 @@
 ---
 title: MeSirve
 subtitle: Una plataforma moderna para conectar negocios con clientes de manera eficiente
-image: /assets/images/projects/mesirve.jpg
+image: /assets/images/projects/mesirve.webp
 url: https://mesirve.app
 highlighted: true
 ---

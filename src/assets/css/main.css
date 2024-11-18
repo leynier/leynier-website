@@ -74,7 +74,7 @@ html.dark #darkToggle:hover .horizon {
 .logo {
   width: 150px;  
   height: 30px;  
-  background-image: url('/assets/images/logo.png');
+  background-image: url('/assets/images/logo.webp');
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -86,7 +86,7 @@ html.dark #darkToggle:hover .horizon {
   }  
 }
 html.dark .logo {
-    background-image: url('/assets/images/logo-white.png');
+    background-image: url('/assets/images/logo-white.webp');
   } 
 
   /* BTN LEY */

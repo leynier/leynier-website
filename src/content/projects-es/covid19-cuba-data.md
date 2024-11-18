@@ -1,7 +1,7 @@
 ---
 title: Covid19 Cuba Data
 subtitle: Una iniciativa de ciencia, tecnología y periodismo para combatir la COVID-19 en Cuba. Datos abiertos y herramientas interactivas al servicio de la población.
-image: /assets/images/projects/covid.png
+image: /assets/images/projects/covid.webp
 url: https://github.com/covid19cuba
 highlighted: true
 ---

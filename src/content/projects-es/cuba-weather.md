@@ -1,7 +1,7 @@
 ---
 title: Cuba Weather
 subtitle: Iniciativa sin fines de lucro que proporciona a los residentes cubanos un fácil acceso a la información meteorológica nacional.
-image: /assets/images/projects/weather.png
+image: /assets/images/projects/weather.webp
 url: https://github.com/cuba-weather
 highlighted: true
 ---

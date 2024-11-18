@@ -1,7 +1,7 @@
 ---
 title: Cuba Weather
 subtitle: Non-profit initiative that provides Cuban residents with easy access to national weather information.
-image: /assets/images/projects/weather.png
+image: /assets/images/projects/weather.webp
 url: https://github.com/cuba-weather
 highlighted: true
 ---
