@@ -1,0 +1,18 @@
+---
+interface Props {
+  url: string;
+  config: Record<string, string | number | boolean | string[]>;
+}
+
+const { url, config } = Astro.props;
+
+const query = Object.entries(config)
+  .map(([key, value]) => `${key}=${value}`)
+  .join("&");
+const imageUrl = `${url}?${query}`;
+---
+
+<img
+  class="w-full"
+  src={imageUrl}
+/>

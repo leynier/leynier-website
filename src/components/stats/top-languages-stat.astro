@@ -1,0 +1,21 @@
+---
+import { t } from "../../lib/utils/il8n";
+import BaseStat from "./base-stat.astro";
+
+const config = {
+  username: "leynier",
+  layout: "compact",
+  size_weight: 0.5,
+  count_weight: 0.5,
+  langs_count: 4,
+  hide_title: true,
+  hide_border: true,
+  theme: "transparent",
+  locale: t(Astro),
+};
+---
+
+<BaseStat
+  url="https://github-readme-stats-six-kappa-79.vercel.app/api/top-langs"
+  config={config}
+/>

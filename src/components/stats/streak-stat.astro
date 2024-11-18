@@ -1,0 +1,17 @@
+---
+import { t } from "../../lib/utils/il8n";
+import BaseStat from "./base-stat.astro";
+
+const config = {
+  user: "leynier",
+  theme: "transparent",
+  hide_border: true,
+  mode: "weekly",
+  locale: t(Astro),
+};
+---
+
+<BaseStat
+  url="https://github-readme-streak-stats-five-vert.vercel.app"
+  config={config}
+/>

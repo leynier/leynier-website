@@ -1,0 +1,55 @@
+---
+import PageHeading from "../../components/page-heading.astro";
+import ActivityGraphStat from "../../components/stats/activity-graph-stat.astro";
+import GeneralStats from "../../components/stats/general-stats.astro";
+import GithubChart from "../../components/stats/github-chart.astro";
+import StreakStat from "../../components/stats/streak-stat.astro";
+import TopLanguagesStat from "../../components/stats/top-languages-stat.astro";
+import TrophiesStat from "../../components/stats/trophies-stat.astro";
+import Layout from "../../layouts/main.astro";
+import addLangPaths from "../../lib/utils/add-lang-paths";
+import { t } from "../../lib/utils/il8n";
+
+export function getStaticPaths() {
+  return addLangPaths();
+}
+
+const headTitle = t("Stats", "Estadísticas", t(Astro));
+---
+
+<Layout title={headTitle}>
+  <section class="max-w-4xl mx-auto px-7 lg:px-0">
+    <PageHeading title={headTitle} />
+
+    <h2
+      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">
+      {t("General", "Generales", t(Astro))}
+    </h2>
+    <GeneralStats />
+
+    <h2
+      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">
+      {t("Activity", "Actividad", t(Astro))}
+    </h2>
+    <GithubChart />
+    <ActivityGraphStat />
+
+    <h2
+      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">
+      {t("Current Streak", "Racha Actual", t(Astro))}
+    </h2>
+    <StreakStat />
+
+    <h2
+      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">
+      {t("Trophies", "Trofeos", t(Astro))}
+    </h2>
+    <TrophiesStat />
+
+    <h2
+      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">
+      {t("Top Languages", "Lenguajes Principales", t(Astro))}
+    </h2>
+    <TopLanguagesStat />
+  </section>
+</Layout>

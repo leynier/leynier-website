@@ -26,5 +26,12 @@
 			"spanish": "Publicaciones"
 		},
 		"url": "/posts"
+	},
+	{
+		"name": {
+			"english": "Stats",
+			"spanish": "Estadísticas"
+		},
+		"url": "/stats"
 	}
 ]
