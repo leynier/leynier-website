@@ -3,7 +3,7 @@ import BaseStat from "./base-stat.astro";
 
 const config = {
   username: "leynier",
-  theme: "flat",
+  theme: "algolia",
   "no-bg": true,
   "no-frame": true,
   column: 5,
@@ -11,8 +11,9 @@ const config = {
   "margin-h": 15,
 };
 ---
-
+<div class="mt-8 mb-8">
 <BaseStat
   url="https://github-profile-trophy.vercel.app"
   config={config}
 />
+</div>
