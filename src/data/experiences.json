@@ -124,16 +124,16 @@
       "english": [
         "Flutter",
         "FastAPI",
-        "MongoDB",
+        "Postgres",
         "Dart",
-        "Firebase"
+        "Supabase"
       ],
       "spanish": [
         "Flutter",
         "FastAPI",
-        "MongoDB",
+        "Postgres",
         "Dart",
-        "Firebase"
+        "Supabase"
       ]
     },
     "logo": "/assets/images/experiences/mesirve.webp",
