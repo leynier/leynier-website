@@ -70,12 +70,12 @@ const education = t("Education", "Educación", t(Astro));
                   <ExperienceItem
                     startDate={experience.startDate}
                     endDate={experience.endDate}
-                    role={experience.role.english}
-                    institution={experience.institution.english}
+                    role={t(experience.role, t(Astro))}
+                    institution={t(experience.institution, t(Astro))}
                     url={experience.url}
-                    description={experience.description.english}
+                    description={t(experience.description, t(Astro))}
                     logo={experience.logo}
-                    tags={experience.tags.english}
+                    tags={t(experience.tags, t(Astro))}
                   />
                 </div>
               </>
