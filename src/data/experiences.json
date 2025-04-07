@@ -1,7 +1,47 @@
 [
   {
     "startDate": "2021-01",
-    "endDate": null,
+    "endDate": "2025-04",
+    "role": {
+      "english": "Chief Technology Officer",
+      "spanish": "Director de Tecnología"
+    },
+    "institution": {
+      "english": "EducUp",
+      "spanish": "EducUp"
+    },
+    "description": {
+      "english": "As CTO at EducUp, I lead the technology strategy and coordinate frontend, backend, and mobile development teams using agile methodologies. I work with technologies such as ASP.Net Core, Flutter, Unity, FastAPI, Firebase, and AWS, ensuring scalable architecture aligned with business objectives. I collaborate closely with product and design teams to deliver technical excellence and outstanding user experiences.",
+      "spanish": "Como CTO de EducUp, lidero la estrategia tecnológica y coordino equipos de desarrollo frontend, backend y móvil, aplicando metodologías ágiles. Trabajo con tecnologías como ASP.Net Core, Flutter, Unity, FastAPI, Firebase y AWS, garantizando una arquitectura escalable alineada con los objetivos del negocio. Colaboro estrechamente con producto y diseño para asegurar excelencia técnica y una experiencia de usuario excepcional."
+    },
+    "tags": {
+      "english": [
+        "ASP.Net Core",
+        "Unity",
+        "Flutter",
+        "FastAPI",
+        "Firebase",
+        "AWS",
+        "Agile Methodologies"
+      ],
+      "spanish": [
+        "ASP.Net Core",
+        "Unity",
+        "Flutter",
+        "FastAPI",
+        "Firebase",
+        "AWS",
+        "Metodologías Ágiles"
+      ]
+    },
+    "logo": "/assets/images/experiences/vilin.webp",
+    "url": "https://educup.io",
+    "type": "professional",
+    "highlighted": true
+  },
+  {
+    "startDate": "2021-01",
+    "endDate": "2025-04",
     "role": {
       "english": "Head of Engineering",
       "spanish": "Jefe de Ingeniería"
@@ -37,7 +77,7 @@
     "logo": "/assets/images/experiences/vilin.webp",
     "url": "https://educup.io",
     "type": "professional",
-    "highlighted": true
+    "highlighted": false
   },
   {
     "startDate": "2021-12",
