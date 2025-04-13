@@ -32,6 +32,7 @@
 			"english": "Stats",
 			"spanish": "Estadísticas"
 		},
-		"url": "/stats"
+		"url": "/stats",
+		"disabled": true
 	}
 ]

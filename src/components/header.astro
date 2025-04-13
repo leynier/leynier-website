@@ -61,7 +61,7 @@ import LanguageSelector from "./language-selector.astro";
           </div>
         </div>
         {
-          menus.map((menu) => {
+          menus.filter(menu => !menu.disabled).map((menu) => {
             return (
               <a
                 href={getRelativeLocaleUrl(t(Astro), menu.url)}
