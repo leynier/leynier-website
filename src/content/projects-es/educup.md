@@ -4,9 +4,10 @@ subtitle: Del desarrollo inicial a liderar la ingeniería detrás de una platafo
 image: /assets/images/projects/educup.webp
 url: https://educup.io
 highlighted: true
+order: 3
 ---
 
-En EducUp comencé mi trayectoria como desarrollador, formando parte de un equipo pequeño pero con grandes aspiraciones. A medida que la empresa crecía, también lo hacían mis responsabilidades y desafíos, hasta llegar a mi posición actual como Jefe de Ingeniería. Este recorrido no solo ha sido profesionalmente enriquecedor, sino que me ha dado la oportunidad única de vivir y contribuir al crecimiento de una startup desde sus primeras etapas hasta convertirse en un producto utilizado por miles de personas en todo el mundo.
+En EducUp comencé mi trayectoria como desarrollador, formando parte de un equipo pequeño pero con grandes aspiraciones. A medida que la empresa crecía, también lo hacían mis responsabilidades y desafíos, hasta llegar a mi posición actual como CTO. Este recorrido no solo ha sido profesionalmente enriquecedor, sino que me ha dado la oportunidad única de vivir y contribuir al crecimiento de una startup desde sus primeras etapas hasta convertirse en un producto utilizado por miles de personas en todo el mundo.
 
 ### **Un viaje de crecimiento profesional y empresarial**
 

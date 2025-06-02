@@ -4,9 +4,10 @@ subtitle: From initial development to leading the engineering behind a constantl
 image: /assets/images/projects/educup.webp
 url: https://educup.io
 highlighted: true
+order: 3
 ---
 
-At EducUp, I began my journey as a developer, being part of a small team with big aspirations. As the company grew, so did my responsibilities and challenges, leading to my current position as Head of Engineering. This journey has not only been professionally enriching but has also given me the unique opportunity to live and contribute to the growth of a startup from its early stages to becoming a product used by thousands of people worldwide.
+At EducUp, I began my journey as a developer, being part of a small team with big aspirations. As the company grew, so did my responsibilities and challenges, leading to my current position as CTO. This journey has not only been professionally enriching but has also given me the unique opportunity to live and contribute to the growth of a startup from its early stages to becoming a product used by thousands of people worldwide.
 
 ### **A journey of professional and business growth**
 

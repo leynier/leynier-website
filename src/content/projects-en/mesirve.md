@@ -4,6 +4,7 @@ subtitle: A modern platform to efficiently connect businesses with customers
 image: /assets/images/projects/mesirve.webp
 url: https://mesirve.app
 highlighted: true
+order: 2
 ---
 
 **MeSirve** is a digital platform that integrates a wide variety of local and global businesses in one place, allowing users to explore catalogs, make purchases, and enjoy services from the comfort of their homes. The platform stands out for its focus on simplicity, speed, and scalability, benefiting both users and merchants.

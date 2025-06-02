@@ -13,7 +13,7 @@ const labelButton = t("All Projects", "Todos los Proyectos", t(Astro));
 const projectsUrl = getRelativeLocaleUrl(t(Astro), "projects");
 
 const collection = getProjectsCollectionName(Astro);
-const projects = await getCollection(collection);
+const projects = (await getCollection(collection)).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0">

@@ -4,6 +4,7 @@ subtitle: Iniciativa sin fines de lucro que proporciona a los residentes cubanos
 image: /assets/images/projects/weather.webp
 url: https://github.com/cuba-weather
 highlighted: true
+order: 5
 ---
 
 El proyecto **Cuba Weather** fue una iniciativa pionera en Cuba que buscó facilitar el acceso a la información meteorológica de fuentes nacionales utilizando únicamente navegación nacional. Este proyecto de código abierto y sin ánimo de lucro logró revolucionar la forma en que los cubanos consultaban el estado del tiempo, eliminando barreras tecnológicas y económicas para sus usuarios.

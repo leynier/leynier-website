@@ -4,6 +4,7 @@ subtitle: An initiative of science, technology, and journalism to combat COVID-1
 image: /assets/images/projects/covid.webp
 url: https://github.com/covid19cuba
 highlighted: true
+order: 4
 ---
 
 ## What is the project about?

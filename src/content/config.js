@@ -8,6 +8,7 @@ const projectsCollection = defineCollection({
 		image: z.string(),
 		url: z.string(),
 		highlighted: z.boolean(),
+		order: z.number(),
 	}),
 });
 

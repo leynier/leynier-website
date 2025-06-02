@@ -8,7 +8,7 @@ import { getProjectsCollectionName } from "../../lib/utils/get-projects-collecti
 import { t } from "../../lib/utils/il8n";
 
 const collection = getProjectsCollectionName(Astro);
-const projects = await getCollection(collection);
+const projects = (await getCollection(collection)).sort((a, b) => a.data.order - b.data.order);
 
 export function getStaticPaths() {
   return addLangPaths();
