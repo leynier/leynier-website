@@ -3,6 +3,7 @@ title: Nuxt useAsyncData Wrapper
 subtitle: Utilidad tipada para convertir funciones de servicio en enlaces reactivos AsyncData en Nuxt
 image: /assets/images/projects/nuxt-use-async-data-wrapper.png
 url: https://github.com/leynier/nuxt-use-async-data-wrapper
+tags: ["Nuxt", "Typescript", "PNPM"]
 highlighted: false
 order: 10
 ---

@@ -33,6 +33,7 @@ const projects = (await getCollection(collection)).sort((a, b) => a.data.order -
               title={project.data.title}
               subtitle={project.data.subtitle}
               image={project.data.image}
+              tags={project.data.tags}
             />
           );
         })

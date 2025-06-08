@@ -3,6 +3,7 @@ title: Nuxt useAsyncData Wrapper
 subtitle: Type-safe utility to convert service functions into reactive AsyncData bindings in Nuxt
 image: /assets/images/projects/nuxt-use-async-data-wrapper.png
 url: https://github.com/leynier/nuxt-use-async-data-wrapper
+tags: ["Nuxt", "Typescript", "PNPM"]
 highlighted: false
 order: 10
 ---

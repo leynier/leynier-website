@@ -3,6 +3,7 @@ title: Git Fresh
 subtitle: Una herramienta de limpieza segura y selectiva para repositorios Git con protección "stash-first" y soporte multiplataforma
 image: /assets/images/projects/git-fresh.png
 url: https://github.com/leynier/git-fresh
+tags: ["Commander", "Typescript", "Bun"]
 highlighted: false
 order: 11
 ---

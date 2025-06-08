@@ -3,6 +3,7 @@ title: BagPlanner
 subtitle: AI Travel Assistant for Smart, Stress-Free Packing
 image: /assets/images/projects/bagplanner.webp
 url: https://bagplanner.com
+tags: ["Supabase", "Nuxt", "OpenAI"]
 highlighted: true
 order: 1
 ---

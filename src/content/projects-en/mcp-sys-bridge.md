@@ -3,6 +3,7 @@ title: MCP System Bridge
 subtitle: A cross‑platform MCP server that gives AI models native OS super‑powers
 image: /assets/images/projects/mcp-system-bridge.jpeg
 url: https://github.com/leynier/mcp-sys-bridge
+tags: ["FastMCP", "Pydantic", "Python"]
 highlighted: true
 order: 6
 ---

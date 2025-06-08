@@ -3,6 +3,7 @@ title: MeSirve
 subtitle: Una plataforma moderna para conectar eficientemente negocios con clientes
 image: /assets/images/projects/mesirve.webp
 url: https://mesirve.app
+tags: ["FastAPI", "Postgres", "Flutter"]
 highlighted: true
 order: 2
 ---

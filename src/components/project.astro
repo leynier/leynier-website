@@ -7,9 +7,10 @@ interface Project {
   title: string;
   subtitle: string;
   image: string;
+  tags: string[];
 }
 
-const { slug, title, subtitle, image } = Astro.props;
+const { slug, title, subtitle, image, tags } = Astro.props;
 
 const url = getRelativeLocaleUrl(t(Astro), `projects/${slug}`);
 ---
@@ -74,5 +75,14 @@ const url = getRelativeLocaleUrl(t(Astro), `projects/${slug}`);
         >{subtitle}</span
       >
     </span>
+    <div class="flex flex-wrap mt-2">
+      {
+        tags.map((tag) => (
+          <span class="flex items-center justify-center w-auto h-auto px-2 py-1 uppercase tracking-widest space-x-1 text-[0.5rem] border rounded-full bg-white dark:bg-neutral-900 text-neutral-800 font-bold dark:text-neutral-400 border-neutral-300 dark:border-neutral-800 shadow-sm m-1">
+            <p class="leading-none gradient-text">{tag}</p>
+          </span>
+        ))
+      }
+    </div>
   </span>
 </a>

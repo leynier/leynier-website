@@ -3,6 +3,7 @@ title: EducUp
 subtitle: Desde el desarrollo inicial hasta liderar la ingeniería de una plataforma educativa global en constante crecimiento.
 image: /assets/images/projects/educup.webp
 url: https://educup.io
+tags: ["ASP.Net", "Flutter", "Unity"]
 highlighted: true
 order: 3
 ---

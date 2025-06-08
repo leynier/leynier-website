@@ -1,8 +1,9 @@
 ---
-title: Nuxt Supabase Query As AsyncData
+title: Nuxt Supabase AsyncData
 subtitle: Módulo Nuxt ligero que extiende las consultas de Supabase con soporte .asAsyncData()
 image: /assets/images/projects/nuxt-supabase-query-as-async-data.png
 url: https://github.com/leynier/nuxt-supabase-query-as-async-data
+tags: ["Nuxt", "Supabase", "TypeScript"]
 highlighted: false
 order: 9
 ---

@@ -3,6 +3,7 @@ title: Git Fresh
 subtitle: A safe, selective cleanup tool for Git repos with stash-first protection and cross-platform support
 image: /assets/images/projects/git-fresh.png
 url: https://github.com/leynier/git-fresh
+tags: ["Commander", "Typescript", "Bun"]
 highlighted: false
 order: 11
 ---

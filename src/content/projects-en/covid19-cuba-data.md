@@ -3,6 +3,7 @@ title: Covid19 Cuba Data
 subtitle: An initiative of science, technology, and journalism to combat COVID-19 in Cuba. Open data and interactive tools at the service of the population.
 image: /assets/images/projects/covid.webp
 url: https://github.com/covid19cuba
+tags: ["Flutter", "Python", "GH Actions"]
 highlighted: true
 order: 4
 ---

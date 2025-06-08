@@ -3,6 +3,7 @@ title: BagPlanner
 subtitle: Asistente de Viaje con IA para un Empaque Inteligente y Sin Estrés
 image: /assets/images/projects/bagplanner.webp
 url: https://bagplanner.com
+tags: ["Supabase", "Nuxt", "OpenAI"]
 highlighted: true
 order: 1
 ---

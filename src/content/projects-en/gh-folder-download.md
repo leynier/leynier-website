@@ -3,6 +3,7 @@ title: GitHub Folder Downloader
 subtitle: High-performance CLI to selectively fetch GitHub repo folders with integrity checks, caching, and rich progress UI
 image: /assets/images/projects/gh-folder-download.png
 url: https://github.com/leynier/gh-folder-download
+tags: ["Typer", "GH API", "Python"]
 highlighted: false
 order: 7
 ---

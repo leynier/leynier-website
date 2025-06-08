@@ -3,6 +3,7 @@ title: DocuLingo
 subtitle: Traducción automatizada palabra por palabra con conservación total del estilo
 image: /assets/images/projects/doculingo.png
 url: https://github.com/leynier/doculingo
+tags: ["Typer", "OpenAI", "Python"]
 highlighted: false
 order: 8
 ---
