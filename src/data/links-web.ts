@@ -7,4 +7,4 @@ export const links = {
   linkedin: "https://www.linkedin.com/in/leynier",
   twitter: "https://x.com/leynier41",
   youtube: "https://www.youtube.com/@leynierdev",
-} as const
+} as const;
