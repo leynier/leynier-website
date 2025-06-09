@@ -1,18 +1,18 @@
-# Leynier Gutiérrez González - Personal Website
+# Leynier Gutiérrez González - Personal Website 🚀
 
 Welcome to Leynier Gutiérrez González's personal website repository! This website serves as a portfolio to showcase my projects, experiences, and thoughts.
 
-## Features
+## Features ✨
 
-* **Developed with Astro**: Leveraging the modern web framework for exceptional performance and flexibility.
-* **Responsive Design with Tailwind CSS**: A beautiful and adaptive user experience across all devices, built with Tailwind CSS's utility-first approach.
-* **Multilingual Support (i18n)**: Available in Spanish and English to cater to a broader audience.
-* **TypeScript**: Enhancing code quality and maintainability with static typing.
-* **Dynamic Animations**: Engaging user experiences with smooth GSAP animations.
-* **GraphQL Integration**: Efficient data fetching for dynamic content.
-* **Markdown Content**: Easy content management for blog posts or projects.
+* **Developed with Astro** 🚀: Leveraging the modern web framework for exceptional performance and flexibility.
+* **Responsive Design with Tailwind CSS** 🎨: A beautiful and adaptive user experience across all devices, built with Tailwind CSS's utility-first approach.
+* **Multilingual Support (i18n)** 🌐: Available in Spanish and English to cater to a broader audience.
+* **TypeScript** ✅: Enhancing code quality and maintainability with static typing.
+* **Dynamic Animations** ✨: Engaging user experiences with smooth GSAP animations.
+* **GraphQL Integration** ⚡: Efficient data fetching for dynamic content.
+* **Markdown Content** 📝: Easy content management for blog posts or projects.
 
-## Installation
+## Installation 🛠️
 
 To set up the project locally, follow these steps:
 
@@ -29,7 +29,7 @@ To set up the project locally, follow these steps:
     bun install
     ```
 
-## Usage
+## Usage 💻
 
 ### Local Development
 
@@ -59,6 +59,6 @@ To preview the production build locally:
 bun run preview
 ```
 
-## Contact
+## Contact 💬
 
 If you have any questions or suggestions, feel free to contact me through my website.
