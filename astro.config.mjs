@@ -1,6 +1,5 @@
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
-
-import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
 	i18n: {
@@ -15,5 +14,7 @@ export default defineConfig({
 			fallbackType: "rewrite",
 		},
 	},
-	integrations: [tailwind()],
+	vite: {
+		plugins: [tailwindcss()],
+	},
 });
