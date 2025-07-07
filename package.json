@@ -11,18 +11,18 @@
 	},
 	"devDependencies": {
 		"@astrojs/check": "^0.9.4",
-		"@tailwindcss/postcss": "^4.1.8",
+		"@tailwindcss/postcss": "^4.1.11",
 		"@tailwindcss/typography": "^0.5.16",
-		"@tailwindcss/vite": "^4.1.8",
+		"@tailwindcss/vite": "^4.1.11",
 		"astro": "5.9.1",
-		"tailwindcss": "^4.1.8",
+		"tailwindcss": "^4.1.11",
 		"typescript": "^5.8.3"
 	},
 	"dependencies": {
-		"caniuse-lite": "^1.0.30001721",
-		"chart.js": "^4.4.6",
-		"graphql-request": "^7.1.2",
-		"gsap": "^3.12.5",
-		"marked": "^15.0.0"
+		"caniuse-lite": "^1.0.30001727",
+		"chart.js": "^4.5.0",
+		"graphql-request": "^7.2.0",
+		"gsap": "^3.13.0",
+		"marked": "^15.0.12"
 	}
 }
