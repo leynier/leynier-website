@@ -5,7 +5,7 @@ image: /assets/images/projects/git-fresh.png
 url: https://github.com/leynier/git-fresh
 tags: ["Commander", "Typescript", "Bun"]
 highlighted: false
-order: 11
+order: 5
 ---
 
 **Git Fresh** is a cross-platform CLI tool that safely resets Git repositories to a clean state while selectively preserving environment files and untracked changes. It’s designed with **rollback safety**, **non-destructive principles**, and full support for `.env` file detection, stash-first workflows, and fine-grained cleanup logic.

@@ -5,7 +5,7 @@ image: /assets/images/projects/doculingo.png
 url: https://github.com/leynier/doculingo
 tags: ["Typer", "OpenAI", "Python"]
 highlighted: false
-order: 8
+order: 6
 ---
 
 **DocuLingo** is an intelligent translation engine for documents that leverages OpenAI models while **faithfully preserving every style detail**—from bold runs to paragraph spacing. Written in modern **Python 3.12+**, it combines smart batching, retry logic, and a plug‑and‑play translator framework to deliver production‑ready localization workflows.

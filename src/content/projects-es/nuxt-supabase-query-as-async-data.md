@@ -5,7 +5,7 @@ image: /assets/images/projects/nuxt-supabase-query-as-async-data.png
 url: https://github.com/leynier/nuxt-supabase-query-as-async-data
 tags: ["Nuxt", "Supabase", "TypeScript"]
 highlighted: false
-order: 9
+order: 3
 ---
 
 **Nuxt Supabase Query As AsyncData** es un módulo compacto de Nuxt 3 que extiende la API del cliente de Supabase con un método `.asAsyncData()`, permitiendo una obtención de datos fluida a través del sistema nativo `useAsyncData` de Nuxt. Soporta patrones de consulta basados en funciones y objetos, proporcionando la máxima flexibilidad para los desarrolladores que utilizan Supabase en sus aplicaciones Nuxt.

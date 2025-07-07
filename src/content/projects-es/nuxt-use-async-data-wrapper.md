@@ -5,7 +5,7 @@ image: /assets/images/projects/nuxt-use-async-data-wrapper.png
 url: https://github.com/leynier/nuxt-use-async-data-wrapper
 tags: ["Nuxt", "Typescript", "PNPM"]
 highlighted: false
-order: 10
+order: 4
 ---
 
 **Nuxt useAsyncData Wrapper** es una utilidad para desarrolladores que transforma objetos tipo servicio con funciones asíncronas en envoltorios `useAsyncData` reactivos y seguros para tipos, para usar en Nuxt 3. Diseñado con lógica avanzada de TypeScript, proporciona generación automática de claves de caché, seguimiento de reactividad y detección de firmas de funciones, todo sin necesidad de código repetitivo manual.

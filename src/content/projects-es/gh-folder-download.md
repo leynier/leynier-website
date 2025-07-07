@@ -5,7 +5,7 @@ image: /assets/images/projects/gh-folder-download.png
 url: https://github.com/leynier/gh-folder-download
 tags: ["Typer", "GH API", "Python"]
 highlighted: false
-order: 7
+order: 2
 ---
 
 **GitHub Folder Downloader** es una herramienta avanzada de línea de comandos que permite a los desarrolladores descargar cualquier carpeta (o subconjunto de archivos) de un repositorio de GitHub público o privado, con filtros detallados, almacenamiento en caché automático, validación de integridad robusta y limitación de velocidad inteligente, mientras muestra una elegante barra de progreso impulsada por Rich. Escrito en **Python 3.12+** moderno y construido alrededor de **asyncio** + **aiohttp**, puede saturar su ancho de banda sin exceder los límites de la API de GitHub ni corromper las descargas.

@@ -5,7 +5,7 @@ image: /assets/images/projects/doculingo.png
 url: https://github.com/leynier/doculingo
 tags: ["Typer", "OpenAI", "Python"]
 highlighted: false
-order: 8
+order: 6
 ---
 
 **DocuLingo** es un motor de traducción inteligente para documentos que aprovecha los modelos de OpenAI mientras **preserva fielmente cada detalle de estilo**, desde negritas hasta el espaciado de párrafos. Escrito en **Python 3.12+** moderno, combina procesamiento por lotes inteligente, lógica de reintento y un framework de traducción plug-and-play para ofrecer flujos de trabajo de localización listos para producción.
