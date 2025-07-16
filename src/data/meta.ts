@@ -1,6 +1,6 @@
 export const description = {
-  english: "👨‍💻 I'm a Computer Scientist and Software Developer with 6+ years of experience, including 2 years leading teams. I'm Head of Engineering and a founding team member at EducUp. I'm a former professor at MatCom. I worked on GRETEL, an international research project in Italy at Univaq. I contributed to several open source projects, including maintaining Python libraries for Supabase.",
-  spanish: "👨‍💻 Soy un Científico de la Computación y Desarrollador de Software con más de 6 años de experiencia, incluyendo 2 años liderando equipos. Soy Jefe de Ingeniería y miembro del equipo fundador en EducUp. Soy ex profesor en MatCom. Trabajé en GRETEL, un proyecto de investigación internacional en Italia en Univaq. He contribuido en varios proyectos de código abierto, incluyendo el mantenimiento de bibliotecas de Python para Supabase.",
+  english: "👨‍💻 I'm a Computer Scientist and Software Developer with 6+ years of experience, including 2 years leading teams. I'm CTO and a founding team member at EducUp. I'm a former professor at MatCom. I worked on GRETEL, an international research project in Italy at Univaq. I contributed to several open source projects, including maintaining Python libraries for Supabase.",
+  spanish: "👨‍💻 Soy un Científico de la Computación y Desarrollador de Software con más de 6 años de experiencia, incluyendo 2 años liderando equipos. Soy CTO y miembro del equipo fundador en EducUp. Soy ex profesor en MatCom. Trabajé en GRETEL, un proyecto de investigación internacional en Italia en Univaq. He contribuido en varios proyectos de código abierto, incluyendo el mantenimiento de bibliotecas de Python para Supabase.",
 };
 
 export const tags = {
