@@ -1,0 +1,88 @@
+---
+import PageHeading from "../../components/page-heading.astro";
+import ServiceCard from "../../components/service-card.astro";
+import servicesData from "../../data/services.json";
+import Layout from "../../layouts/main.astro";
+import addLangPaths from "../../lib/utils/add-lang-paths";
+import { t } from "../../lib/utils/il8n";
+
+export function getStaticPaths() {
+  return addLangPaths();
+}
+
+const { currentLocale } = Astro;
+
+const services = servicesData
+  .sort((a, b) => a.order - b.order)
+  .map((s) => ({
+    title: s.title.english,
+    titleEs: s.title.spanish,
+    description: s.description.english,
+    descriptionEs: s.description.spanish,
+    icon: s.icon,
+    tags: s.tags,
+    color: s.color,
+  }));
+---
+
+<Layout title={t("Services", "Servicios", currentLocale)}>
+  <section class="max-w-4xl mx-auto px-7 lg:px-0">
+    <PageHeading
+      title={t("Services", "Servicios", currentLocale)}
+      description={t(
+        "Professional services I offer to help bring your ideas to life.",
+        "Servicios profesionales que ofrezco para ayudar a materializar tus ideas.",
+        currentLocale
+      )}
+    />
+
+    <div class="grid items-stretch w-full grid-cols-1 sm:grid-cols-2 gap-7 mt-8">
+      {
+        services.map((service) => (
+          <ServiceCard
+            title={service.title}
+            titleEs={service.titleEs}
+            description={service.description}
+            descriptionEs={service.descriptionEs}
+            icon={service.icon}
+            tags={service.tags}
+            color={service.color}
+          />
+        ))
+      }
+    </div>
+
+    <h2
+      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">
+      {t("Let's Work Together", "Trabajemos Juntos", currentLocale)}
+    </h2>
+    <p
+      class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">
+      {t(
+        "Interested in working together? Click on any service above to get started, or send me an",
+        "¿Interesado en trabajar juntos? Haz clic en cualquier servicio arriba para comenzar, o envíame un",
+        currentLocale
+      )}
+      <a
+        href="mailto:leynier41@gmail.com"
+        class="text-indigo-600 underline"
+        title={t("Send me an email", "Enviarme un correo", currentLocale)}
+        >{t("email", "correo", currentLocale)}</a
+      >
+      {t(
+        "and I'll be sure to get back to you.",
+        "y me aseguraré de responderte.",
+        currentLocale
+      )}
+    </p>
+
+    <p
+      class="mt-4 text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">
+      {t(
+        "Need an elite development squad? I'll assemble a powerhouse team and lead it to victory.",
+        "¿Necesitas un escuadrón élite de desarrollo? Reuniré un equipo de alto rendimiento y lo lideraré hacia la victoria.",
+        currentLocale
+      )}
+    </p>
+  </section>
+</Layout>

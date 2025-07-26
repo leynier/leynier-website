@@ -1,0 +1,59 @@
+---
+import { t } from "../lib/utils/il8n";
+
+interface ServiceCard {
+  title: string;
+  titleEs: string;
+  description: string;
+  descriptionEs: string;
+  icon: string;
+  tags: string[];
+  color: string;
+}
+
+const { title, titleEs, description, descriptionEs, icon, tags, color } = Astro.props;
+const { currentLocale } = Astro;
+
+const displayTitle = t(title, titleEs, currentLocale);
+const displayDescription = t(description, descriptionEs, currentLocale);
+---
+
+<a href={`mailto:leynier41@gmail.com?subject=${encodeURIComponent(displayTitle)}`} class="relative flex flex-col items-stretch duration-300 ease-out p-7 sm:p-3 group h-full rounded-2xl">
+  <span
+    class="absolute inset-0 z-20 block w-full h-full duration-300 ease-out bg-transparent border border-transparent border-dashed group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border group-hover:border-neutral-300 dark:group-hover:border-neutral-600 group-hover:border-dashed rounded-2xl group-hover:bg-white dark:group-hover:bg-neutral-950"
+  ></span>
+  <span
+    class="absolute inset-0 z-10 block w-full h-full duration-300 ease-out border border-dashed rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:translate-x-1 group-hover:translate-y-1"
+  ></span>
+  <span
+    class="relative z-30 block duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
+    
+    <!-- Icon and Title -->
+    <div class="flex items-center mb-4">
+      <div class={`w-12 h-12 ${color} rounded-lg flex items-center justify-center mr-4`}>
+        <Fragment set:html={icon} />
+      </div>
+      <h3 class="text-xl font-bold text-neutral-900 dark:text-neutral-100">
+        {displayTitle}
+      </h3>
+    </div>
+
+    <!-- Description -->
+    <div class="px-1 mb-4">
+      <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+        {displayDescription}
+      </p>
+    </div>
+
+    <!-- Tags -->
+    <div class="flex flex-wrap mt-2">
+      {
+        tags.map((tag) => (
+          <span class="flex items-center justify-center w-auto h-auto px-2 py-1 uppercase tracking-widest space-x-1 text-[0.5rem] border rounded-full bg-white dark:bg-neutral-900 text-neutral-800 font-bold dark:text-neutral-400 border-neutral-300 dark:border-neutral-800 shadow-sm m-1">
+            <p class="leading-none gradient-text">{tag}</p>
+          </span>
+        ))
+      }
+    </div>
+  </span>
+</a>

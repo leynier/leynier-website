@@ -1,5 +1,7 @@
 ---
 import ProfilePictureMobile from "../../components/profile-picture-mobile.astro";
+import { t } from "../../lib/utils/il8n";
+import Button from "../button.astro";
 ---
 
 <div
@@ -91,6 +93,20 @@ import ProfilePictureMobile from "../../components/profile-picture-mobile.astro"
         <div
           class="absolute bottom-0 right-0 z-20 w-full h-full rounded-2xl bg-gradient-to-r dark:from-neutral-950 dark:via-black dark:to-neutral-950 from-white via-neutral-50 to-white animate-border-dance">
         </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex justify-center mt-8 mb-8">
+    <div class="text-center">
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+        Si necesitas servicios profesionales de desarrollo de software, estoy aquí para ayudarte.
+      </p>
+      <div class="flex justify-center">
+        <Button
+          link={`/${t(Astro)}/services`}
+          text="Ver Mis Servicios"
+        />
       </div>
     </div>
   </div>

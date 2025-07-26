@@ -1,0 +1,155 @@
+[
+  {
+    "order": 1,
+    "title": {
+      "english": "Full-Stack Development",
+      "spanish": "Desarrollo Full-Stack"
+    },
+    "description": {
+      "english": "Building complete digital platforms from scratch – discovery, architecture, backend, frontend, deployment, and ongoing iteration.",
+      "spanish": "Construcción de plataformas digitales completas desde cero: descubrimiento, arquitectura, backend, frontend, despliegue y evolución continua."
+    },
+    "icon": "<svg class=\"w-6 h-6 text-blue-600 dark:text-blue-400\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 4a1 1 0 011-1h16a1 1 0 011 1v3H3V4zM3 8h18v8a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm4 10h10v2H7v-2z\"></path></svg>",
+    "tags": [
+      "Product Discovery",
+      "Architecture",
+      "Backend",
+      "Frontend"
+    ],
+    "color": "bg-blue-100 dark:bg-blue-900"
+  },
+  {
+    "order": 2,
+    "title": {
+      "english": "Websites Development",
+      "spanish": "Desarrollo de Sitios Web"
+    },
+    "description": {
+      "english": "Responsive marketing sites and web applications focused on performance, accessibility and SEO.",
+      "spanish": "Sitios web responsivos y aplicaciones web enfocadas en rendimiento, accesibilidad y SEO."
+    },
+    "icon": "<svg class=\"w-6 h-6 text-cyan-600 dark:text-cyan-400\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-4.418 0-8 1.79-8 4v2h16v-2c0-2.21-3.582-4-8-4z\"/></svg>",
+    "tags": [
+      "Astro",
+      "Nuxt",
+      "Tailwind",
+      "SEO"
+    ],
+    "color": "bg-cyan-100 dark:bg-cyan-900"
+  },
+  {
+    "order": 3,
+    "title": {
+      "english": "Mobile Apps Development",
+      "spanish": "Desarrollo de Apps Móviles"
+    },
+    "description": {
+      "english": "Cross-platform mobile apps with Flutter – from UI/UX to store publication.",
+      "spanish": "Aplicaciones móviles multiplataforma con Flutter – desde UI/UX hasta publicación en tiendas."
+    },
+    "icon": "<svg class=\"w-6 h-6 text-green-600 dark:text-green-400\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M7 2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2z\"/></svg>",
+    "tags": [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Supabase"
+    ],
+    "color": "bg-green-100 dark:bg-green-900"
+  },
+  {
+    "order": 4,
+    "title": {
+      "english": "Desktop Apps Development",
+      "spanish": "Desarrollo de Apps de Escritorio"
+    },
+    "description": {
+      "english": "Native desktop applications built with Flutter for Windows, macOS and Linux, sharing a single codebase.",
+      "spanish": "Aplicaciones de escritorio nativas desarrolladas con Flutter para Windows, macOS y Linux desde una única base de código."
+    },
+    "icon": "<svg class=\"w-6 h-6 text-teal-600 dark:text-teal-400\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 4h16v12H4zM2 20h20M9 16v4\"/></svg>",
+    "tags": [
+      "Flutter",
+      "Dart",
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "color": "bg-teal-100 dark:bg-teal-900"
+  },
+  {
+    "order": 5,
+    "title": {
+      "english": "Tools & Libraries Development",
+      "spanish": "Desarrollo de Herramientas y Librerías"
+    },
+    "description": {
+      "english": "Custom CLI tools, SDKs and reusable libraries to boost developer productivity.",
+      "spanish": "Herramientas CLI, SDKs y librerías reutilizables a medida para mejorar la productividad del desarrollador."
+    },
+    "icon": "<svg class=\"w-6 h-6 text-indigo-600 dark:text-indigo-400\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 7H7v6h6V7zM3 3h18v18H3V3z\"/></svg>",
+    "tags": [
+      "TypeScript",
+      "Python",
+      "Open Source",
+      "CLI"
+    ],
+    "color": "bg-indigo-100 dark:bg-indigo-900"
+  },
+  {
+    "order": 6,
+    "title": {
+      "english": "Cloud & DevOps Engineering",
+      "spanish": "Ingeniería Cloud y DevOps"
+    },
+    "description": {
+      "english": "Scalable infrastructure, CI/CD pipelines and automation for reliable deployments.",
+      "spanish": "Infraestructura escalable, pipelines CI/CD y automatización para despliegues confiables."
+    },
+    "icon": "<svg class=\"w-6 h-6 text-purple-600 dark:text-purple-400\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 15a4 4 0 018 0h6a4 4 0 010 8H6a4 4 0 01-3-7z\"/></svg>",
+    "tags": [
+      "AWS",
+      "Docker",
+      "GitHub Actions",
+      "Firebase"
+    ],
+    "color": "bg-purple-100 dark:bg-purple-900"
+  },
+  {
+    "order": 7,
+    "title": {
+      "english": "Technical Leadership Management",
+      "spanish": "Gestión de Liderazgo Técnico"
+    },
+    "description": {
+      "english": "CTO-level guidance: team building, architecture reviews and technology strategy.",
+      "spanish": "Orientación a nivel CTO: formación de equipos, revisiones de arquitectura y estrategia tecnológica."
+    },
+    "icon": "<svg class=\"w-6 h-6 text-orange-600 dark:text-orange-400\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 12l2 2 4-4M7 4h10a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V6a2 2 0 012-2z\"/></svg>",
+    "tags": [
+      "Team Leadership",
+      "Architecture",
+      "Agile",
+      "CTO"
+    ],
+    "color": "bg-orange-100 dark:bg-orange-900"
+  },
+  {
+    "order": 8,
+    "title": {
+      "english": "Consultancy & Mentoring",
+      "spanish": "Consultoría y Mentorías"
+    },
+    "description": {
+      "english": "Personalized consultancy and mentoring: best practices, code reviews and career growth.",
+      "spanish": "Consultoría y mentorías personalizadas: buenas prácticas, revisiones de código y crecimiento profesional."
+    },
+    "icon": "<svg class=\"w-6 h-6 text-red-600 dark:text-red-400\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M8 9a3 3 0 106 0 3 3 0 00-6 0zM2 20h16a2 2 0 002-2v-1a6 6 0 00-6-6H8a6 6 0 00-6 6v1a2 2 0 002 2z\"/></svg>",
+    "tags": [
+      "Consulting",
+      "Mentoring",
+      "Code Review",
+      "Best Practices"
+    ],
+    "color": "bg-red-100 dark:bg-red-900"
+  }
+]

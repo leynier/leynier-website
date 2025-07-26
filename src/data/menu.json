@@ -29,6 +29,13 @@
 	},
 	{
 		"name": {
+			"english": "Services",
+			"spanish": "Servicios"
+		},
+		"url": "/services"
+	},
+	{
+		"name": {
 			"english": "Stats",
 			"spanish": "Estadísticas"
 		},
