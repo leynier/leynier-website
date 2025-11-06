@@ -1,4 +1,5 @@
 ---
+import { config } from "../../../config";
 import { t } from "../../lib/utils/i18n";
 
 const locale = t(Astro);
@@ -89,10 +90,11 @@ const moreLabel = t("More", "Más", t(Astro));
 
     async function fetchGitHubData(username: string): Promise<Response> {
       const response = await fetch(
-        `https://github-contributions-api.jogruber.de/v4/${username}?y=last`
+        `${config.github.contributionsApiUrl}/${username}?y=last`,
+        { signal: AbortSignal.timeout(config.api.requestTimeout) }
       );
       if (!response.ok) {
-        throw new Error("Failed to fetch GitHub data");
+        throw new Error(`Failed to fetch GitHub data: ${response.status}`);
       }
       return response.json();
     }
@@ -185,7 +187,7 @@ const moreLabel = t("More", "Más", t(Astro));
       tooltip.classList.add("hidden");
     }
 
-    const username = "leynier";
+    const username = config.github.username;
     try {
       const data = await fetchGitHubData(username);
       const cellData = drawContributionGraph(data.contributions);

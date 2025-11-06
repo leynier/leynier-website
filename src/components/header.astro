@@ -16,13 +16,14 @@ import LanguageSelector from "./language-selector.astro";
     <Logo />
     <div
       id="mobileMenuBackground"
-      onclick="closeMobileMenu()"
       class="fixed inset-0 z-20 hidden w-screen h-screen duration-300 ease-out bg-white/90 dark:bg-neutral-950/90">
     </div>
     <nav
       class="relative z-30 flex flex-row-reverse justify-start w-full text-sm sm:justify-end text-neutral-800 dark:text-neutral-100 sm:flex-row">
       <div
         id="openMenu"
+        aria-label="Open menu"
+        aria-expanded="false"
         class="flex flex-col mt-1 items-end justify-center w-6 h-6 ml-4 cursor-pointer sm:hidden">
         <svg
           style="margin-top:-3px"
@@ -38,6 +39,8 @@ import LanguageSelector from "./language-selector.astro";
       </div>
       <div
         id="closeMenu"
+        aria-label="Close menu"
+        aria-expanded="false"
         class="hidden w-6 h-6 ml-4 -translate-x-1 cursor-pointer sm:hidden">
         <svg
           style="margin-top:3px"
@@ -75,12 +78,16 @@ import LanguageSelector from "./language-selector.astro";
       <LanguageSelector />
       <div
         id="darkToggle"
+        aria-label="Toggle dark mode"
+        role="button"
+        tabindex="0"
         class="relative flex items-center pl-6 ml-4 font-medium tracking-wide cursor-pointer text-neutral-800 group dark:text-white">
         <div
           class="absolute left-0 pr-1 flex items-center justify-center w-6 h-6 overflow-hidden border-b border-transparent horizon group-hover:border-neutral-600">
           <svg
             class="absolute w-6 h-6 transition duration-700 transform ease"
             id="sun"
+            aria-hidden="true"
             fill="none"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -94,6 +101,7 @@ import LanguageSelector from "./language-selector.astro";
           <svg
             class="absolute hidden w-6 h-6 transition duration-700 transform ease"
             id="moon"
+            aria-hidden="true"
             fill="none"
             stroke-linecap="round"
             stroke-linejoin="round"

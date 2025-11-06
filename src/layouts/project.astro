@@ -54,6 +54,7 @@ const { project } = Astro.props;
       <a
         href={project.data.url}
         target="_blank"
+        rel="noopener noreferrer"
         class="flex items-center justify-center w-auto h-auto py-3 uppercase tracking-widest space-x-1 text-[0.6rem] border rounded-full bg-white dark:bg-neutral-900 text-neutral-800 font-bold dark:text-neutral-400 border-neutral-300 dark:border-neutral-800 shadow-sm leading-none gradient-text">
         {t("Visit Project", "Visitar Proyecto", t(Astro))}
       </a>

@@ -1,8 +1,13 @@
+---
+import { config } from "../../config";
+---
+
 <section class="mt-16">
   <div class="flex items-center justify-center">
     <div
       id="github-stats"
       class="bg-neutral-100 dark:bg-neutral-900 shadow-md p-6 rounded-lg w-80 text-neutral-900">
+      <p class="text-sm text-neutral-600 dark:text-neutral-300">Loading GitHub stats...</p>
     </div>
   </div>
   <div
@@ -12,79 +17,118 @@
       GitHub Trophies
     </h2>
     <img
-      src="https://github-profile-trophy.vercel.app/?username=leynier&theme=onedark&no-frame=true&margin-w=15"
+      src={`https://github-profile-trophy.vercel.app/?username=${config.github.username}&theme=onedark&no-frame=true&margin-w=15`}
       alt="GitHub Trophies"
+      loading="lazy"
       class="rounded-lg shadow-lg"
     />
   </div>
 </section>
 
-<script>
+<script define:vars={{ githubUsername: config.github.username, apiBase: config.github.apiBaseUrl, reposLimit: config.api.githubReposLimit, commitsLimit: config.api.githubCommitsLimit, timeout: config.api.requestTimeout }}>
   async function fetchGitHubStats(username) {
-    // Fetch user data
-    const userResponse = await fetch(
-      `https://api.github.com/users/${username}`
-    );
-    const userData = await userResponse.json();
+    try {
+      // Fetch user data
+      const userController = new AbortController();
+      const timeoutId = setTimeout(() => userController.abort(), timeout);
+      
+      const userResponse = await fetch(
+        `${apiBase}/users/${username}`,
+        { signal: userController.signal }
+      );
+      
+      clearTimeout(timeoutId);
+      
+      if (!userResponse.ok) {
+        throw new Error(`GitHub API error: ${userResponse.status}`);
+      }
+      
+      const userData = await userResponse.json();
 
-    // Fetch repositories (limit to 100 to avoid API rate limit)
-    const reposResponse = await fetch(
-      `https://api.github.com/users/${username}/repos?per_page=100`
-    );
-    const reposData = await reposResponse.json();
+      // Fetch repositories (limit to avoid API rate limit)
+      const reposController = new AbortController();
+      const reposTimeoutId = setTimeout(() => reposController.abort(), timeout);
+      
+      const reposResponse = await fetch(
+        `${apiBase}/users/${username}/repos?per_page=${reposLimit}`,
+        { signal: reposController.signal }
+      );
+      
+      clearTimeout(reposTimeoutId);
+      
+      if (!reposResponse.ok) {
+        throw new Error(`GitHub API error: ${reposResponse.status}`);
+      }
+      
+      const reposData = await reposResponse.json();
 
-    // Verificar si reposData es un array
-    // if (!Array.isArray(reposData)) {
-    //     console.error('Error: reposData no es un array', reposData);
-    //     return;  // Salir si reposData no es iterable
-    // }
+      if (!Array.isArray(reposData)) {
+        throw new Error("Repos data is not an array");
+      }
 
-    // Initialize stats
-    let totalStars = 0;
-    let totalCommits = 0;
-    let totalPRs = 0;
-    let totalIssues = 0;
-    let totalReposContributed = reposData.length ?? 0;
+      // Initialize stats
+      let totalStars = 0;
+      let totalCommits = 0;
+      let totalPRs = 0;
+      let totalIssues = 0;
+      let totalReposContributed = reposData.length;
 
-    // Loop through each repo to calculate stars, commits, PRs, and issues
-    if (Array.isArray(reposData))
+      // Loop through each repo to calculate stars, commits, PRs, and issues
       for (const repo of reposData) {
         // Sum stars
-        totalStars += repo.stargazers_count;
+        totalStars += repo.stargazers_count || 0;
 
         // Sum issues count per repository
         totalIssues += repo.open_issues_count || 0;
 
-        // Fetch commits for each repo (only the first 30 to avoid API limit)
-        const commitsResponse = await fetch(
-          `${repo.url}/commits?author=${username}&per_page=30`
-        );
-        const commitsData = await commitsResponse.json();
-
-        if (Array.isArray(commitsData)) {
-          totalCommits += commitsData.length;
+        try {
+          // Fetch commits for each repo (limit to avoid API limit)
+          const commitsController = new AbortController();
+          const commitsTimeoutId = setTimeout(() => commitsController.abort(), timeout);
+          
+          const commitsResponse = await fetch(
+            `${repo.url}/commits?author=${username}&per_page=${commitsLimit}`,
+            { signal: commitsController.signal }
+          );
+          
+          clearTimeout(commitsTimeoutId);
+          
+          if (commitsResponse.ok) {
+            const commitsData = await commitsResponse.json();
+            if (Array.isArray(commitsData)) {
+              totalCommits += commitsData.length;
+            }
+          }
+        } catch (error) {
+          // Silently continue if commits fetch fails for a repo
+          if (import.meta.env.DEV) {
+            console.warn(`Failed to fetch commits for ${repo.name}:`, error);
+          }
         }
 
-        // Assuming each forked repo has PRs contributed
+        // Assuming each non-forked repo has PRs contributed
         if (!repo.fork) totalPRs++;
       }
 
-    // Render stats in HTML
-    renderGitHubStats({
-      name: userData.name || username,
-      totalStars,
-      totalCommits,
-      totalPRs,
-      totalIssues,
-      totalReposContributed,
-    });
+      // Render stats in HTML
+      renderGitHubStats({
+        name: userData.name || username,
+        totalStars,
+        totalCommits,
+        totalPRs,
+        totalIssues,
+        totalReposContributed,
+      });
+    } catch (error) {
+      renderError(error);
+    }
   }
 
   function renderGitHubStats(stats) {
     const container = document.getElementById("github-stats");
     if (!container) return;
     container.innerHTML = `
-            <h2 class="text-xl font-semibold mb-4 text-neutral-600 dark:text-neutral-300">${stats.name}'s GitHub Stats</h2>
+            <h2 class="text-xl font-semibold mb-4 text-neutral-600 dark:text-neutral-300">${escapeHtml(stats.name)}'s GitHub Stats</h2>
             <div class="space-y-2">
                 <p class="flex items-center text-neutral-600 dark:text-neutral-300">
                     <span class="mr-2">⭐</span> Total Stars Earned: <span class="ml-auto font-semibold">${stats.totalStars}</span>
@@ -105,5 +149,21 @@
         `;
   }
 
-  fetchGitHubStats("leynier");
+  function renderError(error) {
+    const container = document.getElementById("github-stats");
+    if (!container) return;
+    container.innerHTML = `
+      <p class="text-sm text-red-600 dark:text-red-400">
+        Failed to load GitHub stats. ${import.meta.env.DEV ? error.message : "Please try again later."}
+      </p>
+    `;
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  fetchGitHubStats(githubUsername);
 </script>

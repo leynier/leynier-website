@@ -95,6 +95,14 @@ if (darkToggle) {
 			showNight(true);
 		}
 	});
+	
+	// Add keyboard support for accessibility
+	darkToggle.addEventListener("keydown", (e) => {
+		if (e.key === "Enter" || e.key === " ") {
+			e.preventDefault();
+			darkToggle.click();
+		}
+	});
 }
 
 function showDay(animate) {
@@ -174,6 +182,7 @@ window.applyMenuItemClasses = () => {
 function mobileMenuFunctionality() {
 	const openMenu = document.getElementById("openMenu");
 	const closeMenu = document.getElementById("closeMenu");
+	const mobileMenuBackground = document.getElementById("mobileMenuBackground");
 	
 	if (openMenu) {
 		openMenu.addEventListener("click", () => {
@@ -183,6 +192,13 @@ function mobileMenuFunctionality() {
 	
 	if (closeMenu) {
 		closeMenu.addEventListener("click", () => {
+			closeMobileMenu();
+		});
+	}
+	
+	// Add click listener to mobile menu background
+	if (mobileMenuBackground) {
+		mobileMenuBackground.addEventListener("click", () => {
 			closeMobileMenu();
 		});
 	}

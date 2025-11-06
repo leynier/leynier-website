@@ -1,14 +1,13 @@
 import { gql, GraphQLClient } from "graphql-request";
+import { config } from "../../config";
 import type { AllPostsData, PostData } from "./schema";
-
-const hashnodeUrl = "blog.leynier.dev";
 
 export const getHashnodeUrl = (slug: string): string => {
   return `/posts/${slug}`;
 }
 
 export const getClient = () => {
-  return new GraphQLClient("https://gql.hashnode.com")
+  return new GraphQLClient(config.hashnode.apiUrl);
 }
 
 export const getAllPosts = async () => {
@@ -17,7 +16,7 @@ export const getAllPosts = async () => {
     const allPosts = await client.request<AllPostsData>(
       gql`
         query allPosts {
-          publication(host: "${hashnodeUrl}") {
+          publication(host: "${config.hashnode.blogUrl}") {
             title
             posts(first: 20) {
               pageInfo{
@@ -83,7 +82,7 @@ export const getPost = async (slug: string) => {
     const data = await client.request<PostData>(
       gql`
         query postDetails($slug: String!) {
-          publication(host: "${hashnodeUrl}") {
+          publication(host: "${config.hashnode.blogUrl}") {
             post(slug: $slug) {
               author{
                 name

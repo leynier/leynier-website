@@ -8,11 +8,13 @@ interface Props {
 const { link, text, otherTab } = Astro.props;
 
 const finalTab = otherTab ? "_blank" : "_self";
+const relAttr = otherTab ? "noopener noreferrer" : undefined;
 ---
 
 <a
   href={link}
   target={finalTab}
+  rel={relAttr}
   type="button"
   class="btn inline-flex w-auto px-4 py-2 mt-5 text-xs font-semibold">
   <strong>{text}</strong>

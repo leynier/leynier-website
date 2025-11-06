@@ -4,19 +4,45 @@ import { getAllPosts, getPost } from "../../../lib/hashnode/client";
 import addLangPaths from "../../../lib/utils/add-lang-paths";
 
 export async function getStaticPaths() {
-  const data = await getAllPosts();
-  const allPosts = data.publication.posts.edges;
-  return addLangPaths(
-    allPosts.map((post) => {
-      return {
-        params: { slug: post.node.slug },
-      };
-    })
-  );
+  try {
+    const data = await getAllPosts();
+    const allPosts = data.publication.posts.edges;
+    
+    if (!allPosts || allPosts.length === 0) {
+      console.warn("No posts found from Hashnode");
+      return [];
+    }
+    
+    return addLangPaths(
+      allPosts.map((post) => {
+        if (!post.node?.slug) {
+          console.warn("Post missing slug:", post);
+          return null;
+        }
+        return {
+          params: { slug: post.node.slug },
+        };
+      }).filter((item): item is { params: { slug: string } } => item !== null)
+    );
+  } catch (error) {
+    console.error("Error in getStaticPaths for posts:", error);
+    return [];
+  }
 }
 
 const { slug } = Astro.params;
-const post = await getPost(slug);
+
+if (!slug) {
+  return Astro.redirect("/404");
+}
+
+let post;
+try {
+  post = await getPost(slug);
+} catch (error) {
+  console.error(`Error fetching post with slug "${slug}":`, error);
+  return Astro.redirect("/404");
+}
 ---
 
 <Layout post={post}>
