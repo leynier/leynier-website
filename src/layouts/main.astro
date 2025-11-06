@@ -4,9 +4,9 @@ import Header from "../components/header.astro";
 import SquareLines from "../components/square-lines.astro";
 import {
   description as defaultDescription,
-  tags as defaulTags,
+  tags as defaultTags,
 } from "../data/meta.ts";
-import { t } from "../lib/utils/il8n";
+import { t } from "../lib/utils/i18n";
 
 interface Props {
   title?: string;
@@ -27,15 +27,17 @@ const finalDescription = description || t(defaultDescription, t(Astro));
 const isDefaultCover = !cover;
 const finalCover = cover || "/assets/images/avatar.webp";
 
-const finalTags = (tags || t(defaulTags, t(Astro))).join(", ");
+const finalTags = (tags || t(defaultTags, t(Astro))).join(", ");
 
 const url = relativeUrl
   ? `https://leynier.dev${relativeUrl}`
   : "https://leynier.dev";
+
+const currentLocale = t(Astro) || "en";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentLocale}>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -71,7 +73,7 @@ const url = relativeUrl
     />
     <meta
       property="og:image"
-      content={finalCover}
+      content={finalCover.startsWith("http") ? finalCover : `https://leynier.dev${finalCover}`}
     />
     {
       isDefaultCover ? (
@@ -128,7 +130,11 @@ const url = relativeUrl
     />
     <meta
       name="twitter:image"
-      content={finalCover}
+      content={finalCover.startsWith("http") ? finalCover : `https://leynier.dev${finalCover}`}
+    />
+    <link
+      rel="canonical"
+      href={url}
     />
 
     <script is:inline>
@@ -150,9 +156,12 @@ const url = relativeUrl
     <link
       rel="icon"
       type="image/x-icon"
-      href="../assets/images/favicon.webp"
+      href="/assets/images/favicon.webp"
     />
-    <script src="../assets/css/main.css"></script>
+    <link
+      rel="stylesheet"
+      href="/assets/css/main.css"
+    />
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
   <body class="antialiased bg-white dark:bg-neutral-950">
@@ -160,7 +169,7 @@ const url = relativeUrl
     <Header />
     <slot />
     <Footer />
-    <script src="../assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
     <Fragment set:html={import.meta.env.FOOTER_INJECT} />
   </body>
 </html>

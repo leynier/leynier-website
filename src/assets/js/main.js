@@ -16,6 +16,10 @@ let headerElement = null;
 
 document.addEventListener("DOMContentLoaded", () => {
 	headerElement = document.getElementById("header");
+	if (!headerElement) {
+		console.error("Header element not found");
+		return;
+	}
 
 	if (
 		localStorage.getItem("dark_mode") &&
@@ -50,85 +54,109 @@ window.stickyHeaderFuncionality = () => {
 };
 
 window.evaluateHeaderPosition = () => {
+	if (!headerElement) return;
+	
+	const menuElement = document.getElementById("menu");
+	if (!menuElement) return;
+	
 	if (window.scrollY > 16) {
-		headerElement.firstElementChild.classList.add(...stickyClassesContainer);
-		headerElement.firstElementChild.classList.remove(
-			...unstickyClassesContainer,
-		);
+		if (headerElement.firstElementChild) {
+			headerElement.firstElementChild.classList.add(...stickyClassesContainer);
+			headerElement.firstElementChild.classList.remove(
+				...unstickyClassesContainer,
+			);
+		}
 		headerElement.classList.add(...stickyClasses);
 		headerElement.classList.remove(...unstickyClasses);
-		document.getElementById("menu").classList.add("top-[56px]");
-		document.getElementById("menu").classList.remove("top-[75px]");
+		menuElement.classList.add("top-[56px]");
+		menuElement.classList.remove("top-[75px]");
 	} else {
-		headerElement.firstElementChild.classList.remove(...stickyClassesContainer);
-		headerElement.firstElementChild.classList.add(...unstickyClassesContainer);
+		if (headerElement.firstElementChild) {
+			headerElement.firstElementChild.classList.remove(...stickyClassesContainer);
+			headerElement.firstElementChild.classList.add(...unstickyClassesContainer);
+		}
 		headerElement.classList.add(...unstickyClasses);
 		headerElement.classList.remove(...stickyClasses);
-		document.getElementById("menu").classList.remove("top-[56px]");
-		document.getElementById("menu").classList.add("top-[75px]");
+		menuElement.classList.remove("top-[56px]");
+		menuElement.classList.add("top-[75px]");
 	}
 };
 
-document.getElementById("darkToggle").addEventListener("click", () => {
-	document.documentElement.classList.add("duration-300");
+const darkToggle = document.getElementById("darkToggle");
+if (darkToggle) {
+	darkToggle.addEventListener("click", () => {
+		document.documentElement.classList.add("duration-300");
 
-	if (document.documentElement.classList.contains("dark")) {
-		localStorage.removeItem("dark_mode");
-		showDay(true);
-	} else {
-		localStorage.setItem("dark_mode", true);
-		showNight(true);
-	}
-});
+		if (document.documentElement.classList.contains("dark")) {
+			localStorage.removeItem("dark_mode");
+			showDay(true);
+		} else {
+			localStorage.setItem("dark_mode", true);
+			showNight(true);
+		}
+	});
+}
 
 function showDay(animate) {
-	document.getElementById("sun").classList.remove("setting");
-	document.getElementById("moon").classList.remove("rising");
+	const sun = document.getElementById("sun");
+	const moon = document.getElementById("moon");
+	const dayText = document.getElementById("dayText");
+	const nightText = document.getElementById("nightText");
+	
+	if (!sun || !moon || !dayText || !nightText) return;
+	
+	sun.classList.remove("setting");
+	moon.classList.remove("rising");
 
 	let timeout = 0;
 
 	if (animate) {
 		timeout = 500;
-
-		document.getElementById("moon").classList.add("setting");
+		moon.classList.add("setting");
 	}
 
 	setTimeout(() => {
-		document.getElementById("dayText").classList.remove("hidden");
-		document.getElementById("nightText").classList.add("hidden");
+		dayText.classList.remove("hidden");
+		nightText.classList.add("hidden");
 
-		document.getElementById("moon").classList.add("hidden");
-		document.getElementById("sun").classList.remove("hidden");
+		moon.classList.add("hidden");
+		sun.classList.remove("hidden");
 
 		if (animate) {
 			document.documentElement.classList.remove("dark");
-			document.getElementById("sun").classList.add("rising");
+			sun.classList.add("rising");
 		}
 	}, timeout);
 }
 
 function showNight(animate) {
-	document.getElementById("moon").classList.remove("setting");
-	document.getElementById("sun").classList.remove("rising");
+	const sun = document.getElementById("sun");
+	const moon = document.getElementById("moon");
+	const dayText = document.getElementById("dayText");
+	const nightText = document.getElementById("nightText");
+	
+	if (!sun || !moon || !dayText || !nightText) return;
+	
+	moon.classList.remove("setting");
+	sun.classList.remove("rising");
 
 	let timeout = 0;
 
 	if (animate) {
 		timeout = 500;
-
-		document.getElementById("sun").classList.add("setting");
+		sun.classList.add("setting");
 	}
 
 	setTimeout(() => {
-		document.getElementById("nightText").classList.remove("hidden");
-		document.getElementById("dayText").classList.add("hidden");
+		nightText.classList.remove("hidden");
+		dayText.classList.add("hidden");
 
-		document.getElementById("sun").classList.add("hidden");
-		document.getElementById("moon").classList.remove("hidden");
+		sun.classList.add("hidden");
+		moon.classList.remove("hidden");
 
 		if (animate) {
 			document.documentElement.classList.add("dark");
-			document.getElementById("moon").classList.add("rising");
+			moon.classList.add("rising");
 		}
 	}, timeout);
 }
@@ -144,33 +172,52 @@ window.applyMenuItemClasses = () => {
 };
 
 function mobileMenuFunctionality() {
-	document.getElementById("openMenu").addEventListener("click", () => {
-		openMobileMenu();
-	});
-
-	document.getElementById("closeMenu").addEventListener("click", () => {
-		closeMobileMenu();
-	});
+	const openMenu = document.getElementById("openMenu");
+	const closeMenu = document.getElementById("closeMenu");
+	
+	if (openMenu) {
+		openMenu.addEventListener("click", () => {
+			openMobileMenu();
+		});
+	}
+	
+	if (closeMenu) {
+		closeMenu.addEventListener("click", () => {
+			closeMobileMenu();
+		});
+	}
 }
 
 window.openMobileMenu = () => {
-	document.getElementById("openMenu").classList.add("hidden");
-	document.getElementById("closeMenu").classList.remove("hidden");
-	document.getElementById("menu").classList.remove("hidden");
-	document.getElementById("mobileMenuBackground").classList.add("opacity-0");
-	document.getElementById("mobileMenuBackground").classList.remove("hidden");
+	const openMenu = document.getElementById("openMenu");
+	const closeMenu = document.getElementById("closeMenu");
+	const menu = document.getElementById("menu");
+	const mobileMenuBackground = document.getElementById("mobileMenuBackground");
+	
+	if (!openMenu || !closeMenu || !menu || !mobileMenuBackground) return;
+	
+	openMenu.classList.add("hidden");
+	closeMenu.classList.remove("hidden");
+	menu.classList.remove("hidden");
+	mobileMenuBackground.classList.add("opacity-0");
+	mobileMenuBackground.classList.remove("hidden");
 
 	setTimeout(() => {
-		document
-			.getElementById("mobileMenuBackground")
-			.classList.remove("opacity-0");
+		mobileMenuBackground.classList.remove("opacity-0");
 	}, 1);
 };
 
 window.closeMobileMenu = () => {
-	document.getElementById("closeMenu").classList.add("hidden");
-	document.getElementById("openMenu").classList.remove("hidden");
-	document.getElementById("menu").classList.add("hidden");
-	document.getElementById("mobileMenuBackground").classList.add("hidden");
+	const openMenu = document.getElementById("openMenu");
+	const closeMenu = document.getElementById("closeMenu");
+	const menu = document.getElementById("menu");
+	const mobileMenuBackground = document.getElementById("mobileMenuBackground");
+	
+	if (!openMenu || !closeMenu || !menu || !mobileMenuBackground) return;
+	
+	closeMenu.classList.add("hidden");
+	openMenu.classList.remove("hidden");
+	menu.classList.add("hidden");
+	mobileMenuBackground.classList.add("hidden");
 };
 

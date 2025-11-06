@@ -1,14 +1,14 @@
 import { toCodes } from "astro:i18n";
 import config from "../../../astro.config.mjs";
 
-interface Item {
-  params: Params;
-  [key: string]: any;
-}
-
 interface Params {
   lang?: string;
-  [key: string]: any;
+  [key: string]: string | undefined;
+}
+
+interface Item {
+  params: Params;
+  [key: string]: unknown;
 }
 
 export default function addLangPaths(items: Item[] = []): Item[] {

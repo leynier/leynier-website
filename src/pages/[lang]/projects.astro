@@ -5,7 +5,7 @@ import Project from "../../components/project.astro";
 import Layout from "../../layouts/main.astro";
 import addLangPaths from "../../lib/utils/add-lang-paths";
 import { getProjectsCollectionName } from "../../lib/utils/get-projects-collection-name";
-import { t } from "../../lib/utils/il8n";
+import { t } from "../../lib/utils/i18n";
 
 const collection = getProjectsCollectionName(Astro);
 const projects = (await getCollection(collection)).sort((a, b) => a.data.order - b.data.order);

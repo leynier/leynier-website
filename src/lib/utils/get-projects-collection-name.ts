@@ -1,4 +1,4 @@
-import { t } from "./il8n";
+import { t } from "./i18n";
 
 export type ProjectCollectionName = "projects-en" | "projects-es";
 

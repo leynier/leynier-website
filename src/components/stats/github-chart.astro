@@ -1,5 +1,5 @@
 ---
-import { t } from "../../lib/utils/il8n";
+import { t } from "../../lib/utils/i18n";
 
 const locale = t(Astro);
 
@@ -151,7 +151,6 @@ const moreLabel = t("More", "Más", t(Astro));
         ctx.fillText(day, 5, y);
       });
 
-      console.log(cellDataArray);
       return cellDataArray;
     }
 
@@ -218,7 +217,10 @@ const moreLabel = t("More", "Más", t(Astro));
       // );
       // canvas.addEventListener("mouseout", hideTooltip);
     } catch (error) {
-      console.error("Error:", error);
+      // Silently handle errors in production
+      if (import.meta.env.DEV) {
+        console.error("Error loading GitHub contributions:", error);
+      }
     }
   };
 
