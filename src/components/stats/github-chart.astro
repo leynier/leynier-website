@@ -1,14 +1,17 @@
 ---
-import { config } from "../../../config";
+import { config } from "../../config";
 import { t } from "../../lib/utils/i18n";
 
 const locale = t(Astro);
 
 const lessLabel = t("Less", "Menos", t(Astro));
 const moreLabel = t("More", "Más", t(Astro));
+const githubUsername = config.github.username;
+const contributionsApiUrl = config.github.contributionsApiUrl;
+const requestTimeout = config.api.requestTimeout;
 ---
 
-<github-chart-element data-locale={locale}>
+<github-chart-element data-locale={locale} data-username={githubUsername} data-api-url={contributionsApiUrl} data-timeout={requestTimeout}>
   <div class="p-4 w-full">
     <div class="relative">
       <canvas
@@ -59,7 +62,7 @@ const moreLabel = t("More", "Más", t(Astro));
     contribution: Contribution;
   }
 
-  const init = async (locale: string) => {
+  const init = async (locale: string, username: string, apiUrl: string, timeout: number) => {
     const canvas = document.getElementById(
       "contributionGraph"
     ) as HTMLCanvasElement | null;
@@ -90,8 +93,8 @@ const moreLabel = t("More", "Más", t(Astro));
 
     async function fetchGitHubData(username: string): Promise<Response> {
       const response = await fetch(
-        `${config.github.contributionsApiUrl}/${username}?y=last`,
-        { signal: AbortSignal.timeout(config.api.requestTimeout) }
+        `${apiUrl}/${username}?y=last`,
+        { signal: AbortSignal.timeout(timeout) }
       );
       if (!response.ok) {
         throw new Error(`Failed to fetch GitHub data: ${response.status}`);
@@ -187,10 +190,9 @@ const moreLabel = t("More", "Más", t(Astro));
       tooltip.classList.add("hidden");
     }
 
-    const username = config.github.username;
     try {
       const data = await fetchGitHubData(username);
-      const cellData = drawContributionGraph(data.contributions);
+      drawContributionGraph(data.contributions);
 
       const updateColorLevels = () => {
         setTimeout(() => {
@@ -229,7 +231,10 @@ const moreLabel = t("More", "Más", t(Astro));
   class GithubChartElement extends HTMLElement {
     connectedCallback() {
       const locale = this.dataset.locale as string;
-      init(locale);
+      const username = this.dataset.username as string;
+      const apiUrl = this.dataset.apiUrl as string;
+      const timeout = Number(this.dataset.timeout) || 10000;
+      init(locale, username, apiUrl, timeout);
     }
   }
 

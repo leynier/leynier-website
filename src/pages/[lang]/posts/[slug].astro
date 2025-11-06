@@ -14,7 +14,7 @@ export async function getStaticPaths() {
     }
     
     return addLangPaths(
-      allPosts.map((post) => {
+      allPosts.map((post: { node?: { slug?: string } }) => {
         if (!post.node?.slug) {
           console.warn("Post missing slug:", post);
           return null;
@@ -36,7 +36,7 @@ if (!slug) {
   return Astro.redirect("/404");
 }
 
-let post;
+let post: Awaited<ReturnType<typeof getPost>>;
 try {
   post = await getPost(slug);
 } catch (error) {

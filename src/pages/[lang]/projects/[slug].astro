@@ -1,8 +1,9 @@
 ---
 import { getCollection, getEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import Layout from "../../../layouts/project.astro";
 import addLangPaths from "../../../lib/utils/add-lang-paths";
-import { getProjectsCollectionName } from "../../../lib/utils/get-projects-collection-name";
+import { getProjectsCollectionName, type ProjectCollectionName } from "../../../lib/utils/get-projects-collection-name";
 
 export async function getStaticPaths() {
   const collection = getProjectsCollectionName(Astro);
@@ -17,10 +18,14 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
+if (!slug) {
+  return Astro.redirect("/404");
+}
+
 const collection = getProjectsCollectionName(Astro);
-const project = await getEntry(collection, slug);
+const project = await getEntry<ProjectCollectionName>(collection, slug);
 if (!project) {
-  return { status: 404 };
+  return Astro.redirect("/404");
 }
 const { Content } = await project.render();
 ---
