@@ -159,36 +159,37 @@ const requestTimeout = config.api.requestTimeout;
       return cellDataArray;
     }
 
-    function showTooltip(event: MouseEvent, cellData: CellData[]) {
-      if (!canvas || !tooltip) {
-        return;
-      }
-      const mouseX = event.clientX;
-      const mouseY = event.clientY;
-      const cell = cellData.find((cell) => {
-        return (
-          mouseX >= cell.x &&
-          mouseX <= cell.x + cell.width &&
-          mouseY >= cell.y &&
-          mouseY <= cell.y + cell.height
-        );
-      });
-      if (cell) {
-        tooltip.innerHTML = `${new Date(cell.contribution.date).toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" })}: ${cell.contribution.count} contribuciones`;
-        tooltip.style.left = `${event.clientX + 10}px`;
-        tooltip.style.top = `${event.clientY + 10}px`;
-        tooltip.classList.remove("hidden");
-      } else {
-        hideTooltip();
-      }
-    }
-
-    function hideTooltip() {
-      if (!tooltip) {
-        return;
-      }
-      tooltip.classList.add("hidden");
-    }
+    // TODO: Tooltip functions are disabled - see comment below about display issues
+    // function showTooltip(event: MouseEvent, cellData: CellData[]) {
+    //   if (!canvas || !tooltip) {
+    //     return;
+    //   }
+    //   const mouseX = event.clientX;
+    //   const mouseY = event.clientY;
+    //   const cell = cellData.find((cell) => {
+    //     return (
+    //       mouseX >= cell.x &&
+    //       mouseX <= cell.x + cell.width &&
+    //       mouseY >= cell.y &&
+    //       mouseY <= cell.y + cell.height
+    //     );
+    //   });
+    //   if (cell) {
+    //     tooltip.innerHTML = `${new Date(cell.contribution.date).toLocaleDateString(locale, { day: "numeric", month: "long", year: "numeric" })}: ${cell.contribution.count} contribuciones`;
+    //     tooltip.style.left = `${event.clientX + 10}px`;
+    //     tooltip.style.top = `${event.clientY + 10}px`;
+    //     tooltip.classList.remove("hidden");
+    //   } else {
+    //     hideTooltip();
+    //   }
+    // }
+    //
+    // function hideTooltip() {
+    //   if (!tooltip) {
+    //     return;
+    //   }
+    //   tooltip.classList.add("hidden");
+    // }
 
     try {
       const data = await fetchGitHubData(username);
