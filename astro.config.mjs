@@ -26,9 +26,12 @@ export default defineConfig({
 					return false;
 				},
 			},
+			commonjsOptions: {
+				ignoreDynamicRequires: true,
+			},
 		},
 		ssr: {
-			external: ["rollup", "lightningcss", "@tailwindcss/oxide"],
+			external: [/^rollup/, "lightningcss", "@tailwindcss/oxide"],
 		},
 		define: {
 			__dirname: "import.meta.dirname",
