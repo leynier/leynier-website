@@ -21,5 +21,11 @@ export default defineConfig({
 				external: ["fsevents"],
 			},
 		},
+		ssr: {
+			noExternal: ["graphql-request", "graphql"],
+		},
+		optimizeDeps: {
+			exclude: ["fsevents"],
+		},
 	},
 });
