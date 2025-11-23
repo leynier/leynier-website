@@ -18,14 +18,14 @@ export default defineConfig({
 		plugins: [tailwindcss()],
 		build: {
 			rollupOptions: {
-				external: ["fsevents"],
+				external: (id) => {
+					// Externalize macOS-only fsevents
+					if (id === "fsevents") return true;
+					// Externalize lightningcss WASM fallback path
+					if (id.includes("../pkg") || id.includes("/pkg")) return true;
+					return false;
+				},
 			},
-		},
-		ssr: {
-			noExternal: ["graphql-request", "graphql"],
-		},
-		optimizeDeps: {
-			exclude: ["fsevents"],
 		},
 	},
 });
