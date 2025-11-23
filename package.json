@@ -19,6 +19,7 @@
 		"typescript": "^5.8.3"
 	},
 	"dependencies": {
+		"@vercel/analytics": "^1.5.0",
 		"caniuse-lite": "^1.0.30001727",
 		"chart.js": "^4.5.0",
 		"graphql-request": "^7.2.0",

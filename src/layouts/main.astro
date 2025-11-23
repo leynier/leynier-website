@@ -7,6 +7,7 @@ import {
   tags as defaulTags,
 } from "../data/meta.ts";
 import { t } from "../lib/utils/il8n";
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title?: string;
@@ -154,6 +155,7 @@ const url = relativeUrl
     />
     <script src="../assets/css/main.css"></script>
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
+    <Analytics />
   </head>
   <body class="antialiased bg-white dark:bg-neutral-950">
     <SquareLines />
