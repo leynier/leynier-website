@@ -7,7 +7,6 @@ import {
   tags as defaulTags,
 } from "../data/meta.ts";
 import { t } from "../lib/utils/il8n";
-import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title?: string;
@@ -163,6 +162,5 @@ const url = relativeUrl
     <Footer />
     <script src="../assets/js/main.js"></script>
     <Fragment set:html={import.meta.env.FOOTER_INJECT} />
-    <Analytics />
   </body>
 </html>

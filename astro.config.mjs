@@ -16,25 +16,5 @@ export default defineConfig({
 	},
 	vite: {
 		plugins: [tailwindcss()],
-		build: {
-			rollupOptions: {
-				external: (id) => {
-					// Externalize macOS-only fsevents
-					if (id === "fsevents") return true;
-					// Externalize lightningcss WASM fallback path
-					if (id.includes("../pkg") || id.includes("/pkg")) return true;
-					return false;
-				},
-			},
-			commonjsOptions: {
-				ignoreDynamicRequires: true,
-			},
-		},
-		ssr: {
-			external: [/^rollup/, "lightningcss", "@tailwindcss/oxide"],
-		},
-		define: {
-			__dirname: "import.meta.dirname",
-		},
 	},
 });
