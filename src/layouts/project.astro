@@ -23,7 +23,7 @@ const { project } = Astro.props;
   cover={project.data.image}
   relativeUrl={getRelativeLocaleUrl(
     t(Astro) || "en",
-    `/projects/${project.slug}`
+    `/projects/${project.id}`
   )}>
   <main
     class="relative z-30 max-w-6xl pb-1 mx-auto mt-10 bg-white dark:bg-neutral-950 md:rounded-t-md text-neutral-900">

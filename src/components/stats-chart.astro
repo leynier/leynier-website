@@ -20,7 +20,16 @@
 </section>
 
 <script>
-  async function fetchGitHubStats(username) {
+  interface GitHubStats {
+    name: string;
+    totalStars: number;
+    totalCommits: number;
+    totalPRs: number;
+    totalIssues: number;
+    totalReposContributed: number;
+  }
+
+  async function fetchGitHubStats(username: string) {
     // Fetch user data
     const userResponse = await fetch(
       `https://api.github.com/users/${username}`
@@ -80,7 +89,7 @@
     });
   }
 
-  function renderGitHubStats(stats) {
+  function renderGitHubStats(stats: GitHubStats) {
     const container = document.getElementById("github-stats");
     if (!container) return;
     container.innerHTML = `
