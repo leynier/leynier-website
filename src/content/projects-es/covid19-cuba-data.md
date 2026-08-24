@@ -4,8 +4,8 @@ subtitle: Una iniciativa de ciencia, tecnología y periodismo para combatir el C
 image: /assets/images/projects/covid.webp
 url: https://github.com/covid19cuba
 tags: ["Flutter", "Python", "GH Actions"]
-highlighted: true
-order: 4
+highlighted: false
+order: 3
 ---
 
 ## ¿De qué trata el proyecto?

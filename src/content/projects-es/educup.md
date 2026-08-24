@@ -4,8 +4,8 @@ subtitle: Desde el desarrollo inicial hasta liderar la ingeniería de una plataf
 image: /assets/images/projects/educup.webp
 url: https://educup.io
 tags: ["ASP.Net", "Flutter", "Unity"]
-highlighted: true
-order: 3
+highlighted: false
+order: 1
 ---
 
 En EducUp, comencé mi trayectoria como desarrollador en un equipo pequeño con grandes aspiraciones. A medida que la empresa crecía, mis responsabilidades y desafíos también lo hicieron, hasta llevarme a mi puesto actual de CTO. Este recorrido no solo ha sido enriquecedor en lo profesional, sino que me ha brindado la oportunidad única de vivir y contribuir al crecimiento de una startup desde sus inicios hasta convertirse en un producto utilizado por miles de personas en todo el mundo.

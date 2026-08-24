@@ -4,8 +4,8 @@ subtitle: Un servidor MCP multiplataforma que otorga a los modelos de IA superpo
 image: /assets/images/projects/mcp-system-bridge.jpeg
 url: https://github.com/leynier/mcp-sys-bridge
 tags: ["FastMCP", "Pydantic", "Python"]
-highlighted: true
-order: 6
+highlighted: false
+order: 5
 ---
 
 **MCP System Bridge** es un servidor de código abierto que implementa el **Protocolo de Contexto del Modelo (MCP)** para exponer capacidades nativas del sistema operativo —como abrir URLs o copiar texto al portapapeles— a modelos de IA de forma segura y declarativa. Construido íntegramente en **Python 3.12+** con *FastMCP* y **Pydantic v2**, se ejecuta de forma idéntica en Windows, macOS y Linux, lo que lo convierte en un compañero de automatización ideal para cualquier estación de trabajo de desarrollador o entorno de servidor.

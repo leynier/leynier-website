@@ -4,8 +4,8 @@ subtitle: Una aplicación web ligera para registrar y seguir prospectos de alqui
 image: /assets/images/projects/depatrack.png
 url: https://depatrack.leynier.dev
 tags: ["Vue.js", "TypeScript", "Pinia", "Firebase"]
-highlighted: true
-order: 5
+highlighted: false
+order: 4
 ---
 
 **DepaTrack** es una aplicación web ligera diseñada para simplificar el proceso de búsqueda de apartamentos, permitiendo a los usuarios registrar, seguir y gestionar prospectos de alquiler de manera eficiente. Su arquitectura *local-first* garantiza que los datos se almacenen directamente en el navegador, ofreciendo una experiencia rápida y privada con total funcionalidad sin conexión a internet. Opcionalmente, los usuarios pueden sincronizar sus datos en la nube al iniciar sesión, asegurando la accesibilidad desde cualquier dispositivo.

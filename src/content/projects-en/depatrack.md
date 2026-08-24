@@ -4,8 +4,8 @@ subtitle: A lightweight web application for tracking and managing apartment rent
 image: /assets/images/projects/depatrack.png
 url: https://depatrack.leynier.dev
 tags: ["Vue.js", "TypeScript", "Pinia", "Firebase"]
-highlighted: true
-order: 5
+highlighted: false
+order: 4
 ---
 
 **DepaTrack** is a lightweight web application designed to simplify the apartment hunting process, allowing users to register, track, and manage rental prospects efficiently. Its *local-first* architecture ensures that data is stored directly in the browser, providing a fast and private experience with full functionality without internet connection. Optionally, users can synchronize their data to the cloud by signing in, ensuring accessibility from any device.

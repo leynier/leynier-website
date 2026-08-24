@@ -4,8 +4,8 @@ subtitle: An initiative of science, technology, and journalism to combat COVID-1
 image: /assets/images/projects/covid.webp
 url: https://github.com/covid19cuba
 tags: ["Flutter", "Python", "GH Actions"]
-highlighted: true
-order: 4
+highlighted: false
+order: 3
 ---
 
 ## What is the project about?

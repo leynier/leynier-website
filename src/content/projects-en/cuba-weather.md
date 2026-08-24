@@ -5,7 +5,7 @@ image: /assets/images/projects/weather.webp
 url: https://github.com/cuba-weather
 tags: ["Flutter", "Python", "GH Actions"]
 highlighted: false
-order: 1
+order: 7
 ---
 
 The **Cuba Weather** project was a pioneering initiative in Cuba that sought to facilitate access to weather information from national sources using only national navigation. This open-source and non-profit project revolutionized the way Cubans checked the weather, removing technological and economic barriers for its users.
