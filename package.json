@@ -16,7 +16,7 @@
 		"@tailwindcss/vite": "^4.3.3",
 		"astro": "7.2.4",
 		"tailwindcss": "^4.3.3",
-		"typescript": "^6.0.3"
+		"typescript": "^7.0.2"
 	},
 	"dependencies": {
 		"caniuse-lite": "^1.0.30001809",
