@@ -14,15 +14,15 @@
 		"@tailwindcss/postcss": "^4.3.3",
 		"@tailwindcss/typography": "^0.5.20",
 		"@tailwindcss/vite": "^4.3.3",
-		"astro": "7.2.4",
+		"astro": "7.2.6",
 		"tailwindcss": "^4.3.3",
-		"typescript": "^6.0.3"
+		"typescript": "^7.0.2"
 	},
 	"dependencies": {
-		"caniuse-lite": "^1.0.30001809",
+		"caniuse-lite": "^1.0.30001810",
 		"chart.js": "^4.5.1",
 		"fast-xml-parser": "^5.11.0",
 		"gsap": "^3.15.0",
-		"marked": "^18.0.10"
+		"marked": "^18.0.11"
 	}
 }
