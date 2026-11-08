@@ -1,0 +1,53 @@
+---
+import PageHeading from "../components/page-heading.astro";
+import Layout from "../layouts/main.astro";
+---
+
+<Layout
+  title="Privacy Policy"
+  description="Privacy policy for gog CLI, a personal Google API client."
+  relativeUrl="/privacy">
+  <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
+    <PageHeading
+      title="Privacy Policy"
+      description="Last updated: November 8, 2026"
+    />
+
+    <div
+      class="mt-10 prose-sm prose lg:prose-lg dark:prose-invert prose-h2:mt-8 prose-h2:mb-3">
+      <p>
+        This policy covers <strong>gog CLI</strong>, a personal command-line tool that Leynier Gutiérrez González uses to work with his own Google accounts (Gmail, Calendar, Drive, Docs, Sheets, Contacts, and Tasks). It is not offered to the public.
+      </p>
+
+      <h2>Data accessed</h2>
+      <p>
+        When an account owner signs in and grants consent, gog CLI can read and, when the owner explicitly asks, change data in the Google services listed above for that account only.
+      </p>
+
+      <h2>How data is used</h2>
+      <p>
+        Data is used only to perform the action the account owner requests from the command line, such as listing messages, creating a draft, or reading a calendar event. It is not used for advertising, profiling, or training models, and it is not sold or transferred to third parties.
+      </p>
+
+      <h2>Storage</h2>
+      <p>
+        OAuth tokens are stored on the owner's own computer in an encrypted keyring. Google data is processed locally and is not sent to any server operated by this app. Files the owner chooses to download are stored on the owner's computer.
+      </p>
+
+      <h2>Google API Services User Data Policy</h2>
+      <p>
+        gog CLI's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.
+      </p>
+
+      <h2>Revoking access</h2>
+      <p>
+        Access can be revoked at any time from <a href="https://myaccount.google.com/permissions">Google Account permissions</a>. Removing the app there invalidates its tokens immediately.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about this policy: <a href="mailto:leynierdev@gmail.com">leynierdev@gmail.com</a>.
+      </p>
+    </div>
+  </section>
+</Layout>
